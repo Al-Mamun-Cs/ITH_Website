@@ -1,0 +1,86 @@
+<!-- HERO SECTION (Dynamic) -->
+
+<section style="position: relative; overflow: hidden; background-color: #f8f9fa; width: 100vw; margin: 0; padding: 0;">
+
+  <div
+    style="width: 100%; position: relative; height: auto;min-height: 200px;aspect-ratio: 1920 / 600;max-height: 800px;">
+
+    <div *ngFor="let slide of heroSlides; let i = index" [style.display]="i === currentHeroIndex ? 'block' : 'none'"
+      style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+
+      <img [src]="slide.img" alt="Hero Banner"
+        style="width: 100%; height: 100%; object-fit: fill; object-position: center;">
+
+    </div>
+
+    <!-- <button (click)="prevHeroSlide()"
+      style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%);  color: #0DAC50; border: none; border-radius: 50%;  cursor: pointer; font-size: 40px; font-weight: bold; z-index: 10; display: flex; align-items: center; justify-content: center;">
+      &#10094;
+    </button> -->
+
+    <!-- <button (click)="nextHeroSlide()"
+      style="position: absolute; right: 25px; top: 50%; transform: translateY(-50%); color: #0DAC50; border: none; border-radius: 50%;  cursor: pointer; font-size: 20px; font-weight: bold; z-index: 10; display: flex; align-items: center; justify-content: center;">
+      &#10095;
+    </button> -->
+
+    <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+         display: flex; align-items: center; gap: 15px; z-index: 10;">
+
+      <!-- ✅ PREV BUTTON (LEFT SIDE) -->
+      <button (click)="prevHeroSlide()" style="background: transparent;
+           border: none;
+           color: #1E5BB8;
+           font-size: 50px;
+           transform: scale(1.2);
+           cursor: pointer;
+           display: flex; align-items: center; justify-content: center;">
+        &#10094;
+      </button>
+
+      <!-- ✅ DOTS -->
+      <span *ngFor="let dot of heroSlides; let i = index" (click)="currentHeroIndex = i"
+        [style.background-color]="i === currentHeroIndex ? '#0A509F' : '#FAAE1C'"
+        style="width: 12px; height: 12px; border-radius: 50%; cursor: pointer; transition: 0.3s;">
+      </span>
+
+      <!-- ✅ NEXT BUTTON (RIGHT SIDE) -->
+      <button (click)="nextHeroSlide()" style="background: transparent;
+           border: none;
+           color: #1E5BB8;
+           font-size: 50px;
+           transform: scale(1.2);
+           cursor: pointer;
+           display: flex; align-items: center; justify-content: center;">
+        &#10095;
+      </button>
+
+    </div>
+
+
+
+  </div>
+
+</section>
+
+
+<!-- SECTIONS -->
+<!-- <app-sisterconcern></app-sisterconcern> -->
+<app-services></app-services>
+<app-many-clients></app-many-clients>
+<app-partners></app-partners>
+<app-stats></app-stats>
+<app-category-units></app-category-units>
+
+
+<!-- <app-many-brands></app-many-brands> -->
+
+<!-- <app-many-products></app-many-products> -->
+<!-- <app-many-awards></app-many-awards> -->
+<!-- <app-many-events></app-many-events> -->
+
+<app-many-certifications></app-many-certifications>
+<app-membership></app-membership>
+<!-- <app-business-units></app-business-units> -->
+
+
+<!-- NOTE: Footer removed (it is now in app.component) -->

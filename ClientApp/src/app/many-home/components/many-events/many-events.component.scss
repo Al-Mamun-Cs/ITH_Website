@@ -1,0 +1,19 @@
+$many-primary: #9E2A8B;
+
+.awards-section {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .divider-line { width: 4px; height: 40px; background-color: $many-primary; }
+
+  .frame-container {
+    border: 10px solid #e3e3e3;
+    position: relative;
+
+    &::before {
+      content: ''; position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px; border: 2px solid #d4af37; pointer-events: none;
+    }
+  }
+}

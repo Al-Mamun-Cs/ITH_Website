@@ -1,0 +1,120 @@
+$ssg-primary: #9E2A8B;
+$ssg-yellow: #FDB913;
+
+// 1. HEADER SECTION
+.page-header {
+  height: 400px;
+  width: 100%;
+  
+  // CRITICAL: Anchors everything inside this box
+  position: relative; 
+  // CRITICAL: Chops off anything that tries to float outside
+  overflow: hidden; 
+  
+  // Background Image
+  background-image: url('/assets/images/slider/hero-corporate-mission.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  // Ensure image scrolls with the page
+  background-attachment: scroll; 
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  z-index: 1;
+
+  // The Dark/Transparent Overlay
+  .overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-color: white; // Or rgba(0,0,0,0.3) if you want a dimmer
+    z-index: 1;
+  }
+
+  // The Text Container
+  .container {
+    position: relative; // Scrolls with the parent
+    z-index: 10; // Sits on top of overlay
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    display: block;
+    color: #fff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  }
+
+  .hero-title {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+    color: $ssg-yellow;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  }
+}
+
+// 2. CONTENT SECTION
+.content-section {
+  padding: 80px 0;
+  background-color: white;
+  position: relative;
+  z-index: 2; // Ensures content sits 'above' any background quirks
+
+  h2 {
+    color: $ssg-primary;
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  img {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+// Mobile Responsive
+@media (max-width: 768px) {
+  .page-header {
+    height: 300px; 
+    .hero-title {
+      font-size: 2rem;
+    }
+  }
+}

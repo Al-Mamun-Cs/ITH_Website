@@ -1,0 +1,59 @@
+<section class="business-units-section py-2" style="background-color: white;">
+  <div class="container" style="max-width: 1100px; padding-left: 15px; padding-right: 20px;">
+
+
+    <div class="units-single">
+      <div class="unit-card slide-fade">
+
+        <div class="row align-items-center mb-4" *ngFor="let brand of businessUnits">
+          <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0 ps-0">
+            <div class="d-flex justify-content-start">
+              <div style="width: 520px; margin-left: 0;">
+                <div
+                  style="width: 100%;aspect-ratio: 4 / 3;overflow: hidden;display: flex;align-items: center;justify-content: center;">
+                  <img [src]="getEmployeeImage(brand.productImages)" [alt]="brand.typeName"
+                    style="width: 100%;height: 100%;object-fit: contain;" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- RIGHT: CONTENT -->
+          <div class="col-lg-6">
+            <div class="unit-content">
+              <h1 class="unit-title" style="color: #FAAE1C;">
+                Overview
+              </h1>
+              <br>
+              <h3 class="unit-title" style="font-size: xx-large; color: #0A509F;">
+                About {{ brand.businessUnitName }}
+              </h3>
+              <br>
+              <p class="unit-desc"
+                style="font-size: 20px; color: #555; line-height: 1.8; margin-bottom: 2.5rem; text-align: justify;">
+
+                <span>
+                  {{ (isExpanded[i] || brand.bussinessUnitDescriptions.length <= 300) ? brand.bussinessUnitDescriptions
+                    : (brand.bussinessUnitDescriptions | slice:0:300) }} </span>
+
+                    <span *ngIf="brand.bussinessUnitDescriptions.length > 300" (click)="toggleView(i)"
+                      style="color: #0DAC50; font-weight: bold; cursor: pointer; margin-left: 5px; white-space: nowrap;">
+                      {{ isExpanded[i] ? '... View Less' : '... View More' }}
+                    </span>
+
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- <app-many-products></app-many-products> -->

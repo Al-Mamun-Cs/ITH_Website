@@ -1,0 +1,80 @@
+$ssg-yellow: #F57C00;
+$ssg-primary: #9E2A8B;
+
+// 1. Reusable Page Header (Matches Management Page)
+.page-header {
+  height: 350px;
+  background-image: url('../../../assets/images/press-banner.jpg'); // Reusing existing banner
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  .overlay {
+    background: rgba(0, 30, 60, 0.7);
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+  }
+
+  .hero-subtitle { color: #fff; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; }
+  .hero-title { color: $ssg-yellow; font-size: 3rem; font-weight: 800; text-transform: uppercase; margin: 0; }
+}
+
+// 2. Content Grid
+.content-section {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+
+  .award-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .img-wrapper {
+      height: 200px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+    }
+
+    &:hover .img-wrapper img {
+      transform: scale(1.1);
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .award-title {
+      color: $ssg-primary;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .award-desc {
+      color: #555;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .award-date {
+      display: block;
+      margin-top: 15px;
+      font-size: 12px;
+      color: #999;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+}

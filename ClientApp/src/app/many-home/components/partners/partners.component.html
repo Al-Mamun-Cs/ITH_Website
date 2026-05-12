@@ -1,0 +1,27 @@
+<section class="many-partners py-4 bg-white">
+  <div class="container" style="max-width: 1155px; padding-left: 15px; padding-right: 15px;">
+    <h2 style="text-align: center;font-size: 25px; margin-bottom: 25px; color: #0A509F;">
+      Authorized Partner
+    </h2>
+    <!-- <div class="row text-center align-items-center gy-4">
+
+      <div *ngFor="let s of partners" style="flex: 0 0 20%; max-width: 20%; padding: 10px;">
+
+        <div class="stat-card p-3">
+          <img [src]="s.title" alt="certificate" style="width: 150px; height: 150px; object-fit: contain;" />
+        </div>
+
+      </div>
+
+    </div> -->
+
+    <div class="row text-center align-items-center gy-4">
+      <div class="col-6 col-md-2" *ngFor="let s of partners">
+        <div class="stat-card p-3">
+          <img [src]="s.title" alt="certificate"
+               style="width: 150px; height: 150px; object-fit: contain;" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

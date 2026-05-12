@@ -1,0 +1,262 @@
+
+
+.sidebar .menu .list .sms-icons.dashboard {
+  background-image: url(/assets/images/icons/dashboard.png);
+}
+.sidebar .menu .list .sms-icons.Payment_Management {
+  background-image: url(/assets/images/icons/Payment_Management.png);
+}
+.sidebar .menu .list .sms-icons.attendance {
+  background-image: url(/assets/images/icons/attendance.png);
+}
+.sidebar .menu .list .sms-icons.leave {
+  background-image: url(/assets/images/icons/leave.png);
+}
+.sidebar .menu .list .sms-icons.Security {
+  background-image: url(/assets/images/icons/Security.png);
+}
+.sidebar .menu .list .sms-icons.parameter {
+  background-image: url(/assets/images/icons/Parameter_Setup.png);
+}
+.sidebar .menu .list .sms-icons.manual {
+  background-image: url(/assets/images/icons/manual.png);
+}
+.sidebar .menu .list .sms-icons.Password_Management {
+  background-image: url(/assets/images/icons/Password_Management.png);
+}
+.sidebar .menu .list .sms-icons.Reporting {
+  background-image: url(/assets/images/icons/Reporting.png);
+}
+.sidebar .menu .list .sms-icons.Warehouse_Send_Receive {
+  background-image: url(/assets/images/icons/Warehouse_Send_Receive.png);
+}
+.sidebar .menu .list .sms-icons.Production {
+  background-image: url(/assets/images/icons/Production.png);
+}
+.sidebar .menu .list .sms-icons.inventory {
+  background-image: url(/assets/images/icons/inventory.jpg);
+}
+.sidebar .menu .list .sms-icons.help1 {
+  background-image: url(/assets/images/icons/help1.png);
+}
+
+.sidebar .menu .list .sms-icons.notification { 
+  background-image: url(/assets/images/icons/notification.png);
+}
+.sidebar .menu .list .sms-icons.notification {
+  background-image: url(/assets/images/icons/notification.png);
+}
+.sidebar .menu .list .sms-icons.mist {
+  background-image: url(/assets/images/icons/mist-course.png);
+}
+.sidebar .menu .list .sms-icons.gpf {
+  background-image: url(/assets/images/icons/gpf.png);
+}
+.sidebar .menu .list .sms-icons.Employee_Management {
+  background-image: url(/assets/images/icons/Employee_Management.png);
+}
+.sidebar .menu .list .sms-icons.book {
+  background-image: url(/assets/images/icons/Record_room.png);
+}
+.sidebar .menu .list .sms-icons.member {
+  background-image: url(/assets/images/icons/Biodata.png);
+}
+.sidebar .menu .list .sms-icons.semester {
+  background-image: url(/assets/images/icons/semester.png);
+}
+.sidebar .menu .list .sms-icons.sign_out {
+  background-image: url(/assets/images/icons/sign_out.png);
+}
+.sidebar .menu .list .sms-icons.purchase {
+  background-image: url(/assets/images/icons/purchase.png);
+}
+.sidebar .menu .list .sms-icons.Sales {
+  background-image: url(/assets/images/icons/Sales.png);
+}
+.sidebar .menu .list .sms-icons.barcode {
+  background-image: url(/assets/images/icons/barcode.png);
+}
+.sidebar .menu .list .sms-icons.finance {
+  background-image: url(/assets/images/icons/finance.png);
+}
+.sidebar .menu .list .sms-icons.document {
+  background-image: url(/assets/images/icons/document.png);
+}
+.sidebar .menu .list .sms-icons.requisition {
+  background-image: url(/assets/images/icons/requisition.png);
+}
+
+body.light.menu_light.logo-white.theme-white .navbar.active {
+  background-color: purple !important;
+  color: #fff;
+  border-bottom: none;
+  box-shadow: none !important;
+}
+app-footer nav.navbar.active.footer-navbar,
+.container-fluid.footer-fixed {
+  width: 100%;
+  flex-wrap: wrap;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+}
+
+
+
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+@import "common/_variables";
+@import "common/_mixins";
+@import "common/_customanimate.scss";
+@import "common/_general.scss";
+@import "common/_demo.scss";
+@import "common/_helpers.scss";
+@import "common/_media.scss";
+@import "common/_animation.scss";
+@import "common/_rtl.scss";
+
+/*                 [2. Fonts]                   				*/
+// @import "fonts/_material.scss";
+@import "fonts/fontawesome/fontawesome.scss";
+@import "fonts/fontawesome/regular.scss";
+@import "fonts/fontawesome/solid.scss";
+@import "fonts/fontawesome/brands.scss";
+
+/*                 [3. Components ]                   		*/
+@import "components/_breadcrumbs.scss";
+@import "components/_checkboxradio.scss";
+@import "components/_dropdownmenu.scss";
+@import "components/_feed.scss";
+@import "components/_formcomponents.scss";
+@import "components/_infobox.scss";
+@import "components/_inputformgroup.scss";
+@import "components/_labels.scss";
+@import "components/_leftsidebaroverlay.scss";
+@import "components/_navbar";
+@import "components/_navtabs.scss";
+@import "components/_noticeboard.scss";
+@import "components/_rightsidebar.scss";
+@import "components/_searchbar.scss";
+@import "components/_switch.scss";
+@import "components/_thumbnails.scss";
+@import "components/_todo.scss";
+
+/*                 [4. Apps]                   				*/
+@import "apps/_calendar.scss";
+@import "apps/_chat.scss";
+@import "apps/_contactlist.scss";
+@import "apps/_contactgrid.scss";
+@import "apps/_dragdrop.scss";
+@import "apps/_task.scss";
+
+/*                 [5. Pages ]                   				*/
+@import "pages/_dashboard.scss";
+@import "pages/_inbox.scss";
+@import "pages/_pricing.scss";
+@import "pages/_profile.scss";
+@import "pages/_timeline.scss";
+// @import "pages/_extra_pages.scss";
+@import "pages/_auth.scss";
+
+/*                 [6. Pugins ]                   				*/
+@import "plugins/_carousel.scss";
+@import "plugins/_charts.scss";
+@import "plugins/_formwizard.scss";
+@import "plugins/_imagegallery.scss";
+@import "plugins/_maps.scss";
+@import "plugins/_tables.scss";
+
+/*                 [7. UI ]                   */
+@import "ui/_alerts.scss";
+@import "ui/_badgelistgroupitem.scss";
+@import "ui/_buttons.scss";
+@import "ui/_card.scss";
+@import "ui/_collapse.scss";
+@import "ui/_dialogs.scss";
+@import "ui/_expansion.scss";
+@import "ui/_mediaobject.scss";
+@import "ui/_modals.scss";
+@import "ui/_pageloader.scss";
+@import "ui/_pagination.scss";
+@import "ui/_panels.scss";
+@import "ui/_preloaders.scss";
+@import "ui/_progressbars.scss";
+@import "ui/_slider.scss";
+@import "ui/_snackbar.scss";
+@import "ui/_tabs.scss";
+@import "ui/_tooltippopovers.scss";
+@import "ui/_ckeditor.scss";
+
+/*                 [8. Browser ]                   			*/
+@import "browser/_ie10.scss";
+@import "browser/_ie11.scss";
+
+
+/* ================================
+   GLOBAL TEXT FONT (Times family)
+   ================================ */
+
+/* Normal text */
+body,
+p,
+span,
+div,
+label,
+input,
+textarea,
+select,
+button,
+table,
+th,
+td {
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Angular Material typography */
+.mat-typography,
+.mat-body,
+.mat-body-1,
+.mat-body-2,
+.mat-h1,
+.mat-h2,
+.mat-h3,
+.mat-h4,
+.mat-h5,
+.mat-h6 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* ================================
+   ICONS — keep original fonts
+   ================================ */
+
+/* Angular Material Icons */
+mat-icon,
+.material-icons,
+.material-icons-outlined,
+.material-icons-round,
+.material-icons-sharp,
+.material-icons-two-tone {
+  font-family: "Material Icons" !important;
+}
+
+/* Font Awesome (if used) */
+.fa-brands,
+.fab {
+  font-family: "Font Awesome 6 Brands" !important;
+  font-weight: 400;
+}
+
+/* Solid / Regular icons */
+.fa-solid,
+.fa-regular,
+.fa-light,
+.fa-thin,
+.fa-duotone {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900;
+}

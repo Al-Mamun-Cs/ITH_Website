@@ -1,0 +1,165 @@
+// $ssg-yellow: #FDB913;
+// $ssg-dark-bg: #11205F; // The deep purple/black from screenshot
+// $ssg-primary: #9E2A8B;
+
+// // 1. Hero Section Matches Screenshot
+// .management-hero {
+//   height: 700px;
+//     /* Background image for the Management hero.
+//       Put the image file at: src/assets/images/management-main-banner.jpg (no spaces in path)
+//       and the URL below will load it from the dev server. */
+//     background-image: url('/assets/images/management-main-banner.jpg');
+//   background-size: cover;
+//   background-position: center;
+//   position: relative;
+
+//   .overlay {
+//     background: rgba(0, 30, 60, 0.6); // Blue tint overlay
+//     position: absolute;
+//     top: 0; left: 0; right: 0; bottom: 0;
+//   }
+
+//    .hero-subtitle {
+//     color: #fff;
+//     font-size: 14px;
+//     font-weight: 300;
+//     letter-spacing: 2px;
+//     margin-bottom: 5px;
+//     text-transform: uppercase;
+//   }
+
+//  .hero-title {
+//     color: $ssg-yellow;
+//     font-size: 3rem;
+//     font-weight: 800;
+//     text-transform: uppercase;
+//     margin: 0;
+//     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+//   }
+// }
+
+// .management-nav-strip {
+//   background-color: #fff; // White strip like reference
+//   border-bottom: 4px solid $ssg-yellow; // The gold line under the strip
+//   position: relative;
+//   z-index: 10;
+//  overflow-x: auto; 
+//   white-space: nowrap;
+//   -webkit-overflow-scrolling: touch; // Smooth scroll on iOS
+
+//   .container {
+//     // Ensure container doesn't restrict width on mobile scroll
+//     display: flex;
+//     justify-content: center;
+    
+//     @media (max-width: 768px) {
+//       justify-content: flex-start; // Align start for scrolling
+//       padding: 0;
+//     }
+//   }
+
+//   .d-flex {
+//     // Prevent wrapping on mobile so it becomes a scrollable strip
+//     flex-wrap: wrap; 
+    
+//     @media (max-width: 768px) {
+//       flex-wrap: nowrap;
+//       padding: 10px;
+//     }
+//   }
+
+//   .nav-thumb {
+//     width: 80px;
+//     height: 100px;
+//     flex: 0 0 auto; // Don't shrink
+//     cursor: pointer;
+//     overflow: hidden;
+//     position: relative;
+//     border-bottom: 4px solid transparent;
+//     transition: all 0.3s ease;
+//     filter: grayscale(100%);
+//     margin: 0 5px; // Spacing
+
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//       object-position: top;
+//     }
+
+//     &:hover, &.active {
+//       filter: grayscale(0%);
+//       border-bottom-color: $ssg-yellow;
+//     }
+    
+//     &.active {
+//       transform: scale(1.05);
+//       z-index: 2;
+//       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+//     }
+//   }
+// }
+// .management-content {
+//   background-color: $ssg-dark-bg;
+//   padding: 60px 0;
+//   min-height: 600px; // Maintain height to prevent jumping
+//   color: #fff;
+
+//   .main-portrait-wrapper {
+//     border: 1px solid #333;
+//     padding: 5px;
+//     background: rgba(255,255,255,0.05);
+//     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    
+//     .main-portrait {
+//       width: 100%;
+//       display: block;
+//     }
+//   }
+
+//   .member-name {
+//     font-size: 3.5rem; // Large bold name
+//     font-weight: 700;
+//     margin-bottom: 10px;
+//     line-height: 1.1;
+//   }
+
+//   .designation-group {
+//     margin-bottom: 2rem;
+    
+//     .member-designation, .member-company {
+//       color: $ssg-yellow;
+//       font-size: 14px;
+//       font-weight: 700;
+//       letter-spacing: 1px;
+//       text-transform: uppercase;
+//       margin-bottom: 4px;
+//     }
+//   }
+
+//   .member-bio p {
+//     color: #e0e0e0;
+//     font-size: 16px;
+//     line-height: 1.8;
+//     text-align: justify;
+//     font-weight: 300;
+//   }
+// }
+
+// // 4. ANIMATIONS
+// .animate-fade-in { animation: fadeIn 1s ease-out; }
+// .animate-slide-up { animation: slideUp 0.6s ease-out forwards; }
+
+// @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+// @keyframes slideUp { 
+//   from { opacity: 0; transform: translateY(20px); } 
+//   to { opacity: 1; transform: translateY(0); } 
+// }
+
+// // Mobile Responsive
+// @media (max-width: 768px) {
+//   .management-hero .hero-title { font-size: 2rem; }
+//   .member-name { font-size: 2rem; margin-top: 20px; }
+//   .nav-thumb { width: 60px; height: 75px; } // Smaller thumbnails on mobile
+//   .member-bio p { text-align: left; }
+// }

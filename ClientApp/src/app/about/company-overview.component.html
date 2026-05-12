@@ -1,0 +1,130 @@
+<!-- HERO BANNER (Optional, keeps consistency with other pages) -->
+<div class="overview-hero animate-fade-in">
+  <div class="container" style="max-width: 1120px; padding-left: 5px; padding-right: 15px;">
+    <h1 class="hero-title" style="font-family: times ten;">Our Company Overview</h1>
+  </div>
+</div>
+
+<section class="overview-section">
+  <div class="container" style="max-width: 1100px; padding-left: 15px; padding-right: 15px;">
+
+    <!-- ICONS ROW -->
+    <div class="row text-center justify-content-center">
+
+      <!-- 1. VISION -->
+      <div class="col-md-4 mb-5 fade-in-up" style="animation-delay: 0.1s;">
+        <div class="icon-circle">
+          <!-- Target Icon -->
+          <img src="assets/images/vision.jpg" alt="Vision" class="icon-img"
+            style="filter: none;width: 72%; height: auto;">
+        </div>
+        <h3 class="card-title" style="font-family: times ten;">OUR <span class="fw-bold"
+            style="font-family: times ten;">VISION</span></h3>
+        <p class="card-text" style="text-align: justify; font-size: 16px; line-height: 1.6;">
+          {{ isExpanded.vision ? 'To become a leading global IT solutions provider, delivering innovative and reliable
+          technology that empowers businesses to grow.' : ('To become a leading global IT solutions provider, delivering
+          innovative and reliable technology that empowers businesses to grow.' | slice:0:100) }}
+
+          <span (click)="toggle('vision')"
+            style="color: #1E5BB8; font-weight: bold; cursor: pointer; margin-left: 5px;">
+            {{ isExpanded.vision ? '... View Less' : '... View More' }}
+          </span>
+        </p>
+      </div>
+
+      <!-- 2. MISSION -->
+      <div class="col-md-4 mb-5 fade-in-up" style="animation-delay: 0.3s;">
+        <div class="icon-circle">
+          <!-- Screen/Device Icon -->
+          <img src="assets/images/mission.png" alt="Mission" class="icon-img"
+            style="filter: none; width: 73%; height: auto;">
+        </div>
+        <h3 class="card-title">OUR <span class="fw-bold">MISSION</span></h3>
+        <p class="card-text" style="text-align: justify; font-size: 16px; line-height: 1.6;">
+          {{ isExpanded.mission ? 'Our mission is to deliver high-quality, innovative IT solutions that help businesses
+          improve efficiency, enhance performance, and achieve sustainable growth.' :
+          ('Our mission is to deliver high-quality, innovative IT solutions that help businesses improve efficiency,
+          enhance performance, and achieve sustainable growth.' | slice:0:100) }}
+
+          <span (click)="toggle('mission')"
+            style="color: #1E5BB8; font-weight: bold; cursor: pointer; margin-left: 5px;">
+            {{ isExpanded.mission ? '... View Less' : '... View More' }}
+          </span>
+        </p>
+      </div>
+
+      <!-- 3. VALUES -->
+      <div class="col-md-4 mb-5 fade-in-up" style="animation-delay: 0.5s;">
+        <div class="icon-circle">
+          <img src="assets/images/values.png" alt="Values" class="icon-img"
+            style="filter: none; width: 87%; height: auto;">
+        </div>
+        <h3 class="card-title">OUR <span class="fw-bold">VALUES</span></h3>
+        <div style="text-align: justify; font-size: 16px; line-height: 1.6;">
+          <!-- <div *ngIf="!isExpanded.values">
+         {{ 'Quality & Reliability: We prioritize superior manufacturing standards to ensure every product delivers consistent performance...' | slice:0:100 }}
+       </div> -->
+          <span *ngIf="!isExpanded.values">
+            {{ 'We embrace creativity and continuously seek new ideas to deliver advanced technology solutions.' |
+            slice:0:100 }}
+          </span>
+
+          <span *ngIf="isExpanded.values">
+            <strong>Innovation</strong>: We embrace creativity and continuously seek new ideas to deliver advanced
+            technology solutions.<br>
+            <strong>Integrity</strong>: We maintain honesty, transparency, and strong ethical standards in all our
+            actions.<br>
+            <strong>Quality Excellence</strong>: We are committed to delivering high-quality products and services that
+            exceed client expectations. <br>
+            <strong>Customer Focus</strong>: Our clients are at the heart of everything we do; we strive to understand
+            and meet their needs.<br>
+            <strong>Teamwork</strong>: We believe in collaboration, respect, and working together to achieve common
+            goals.<br>
+            <strong>Continuous Improvement</strong>: We constantly learn, adapt, and improve to stay ahead in the
+            fast-changing IT industry.<br>
+            <strong>Reliability</strong>: We ensure dependable services and build trust through consistency and
+            commitment.
+          </span>
+
+          <span (click)="toggle('values')" style="color: #1E5BB8; font-weight: bold; cursor: pointer;">
+            {{ isExpanded.values ? '... View Less' : '... View More' }}
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM TEXT SECTION -->
+    <div class="row mt-2">
+      <div class="col-lg-12">
+        <h2 class="story-title text-start mb-4" style="font-family: times ten;">About Company
+        </h2>
+        <div class="story-text text-start">
+          <p>
+            <strong>Intimate Techno Hub (ITH)</strong> began its journey in September 2021, headquartered in Dhaka,
+            Bangladesh, with a vision to empower businesses through innovative IT and software solutions. Since its
+            inception, ITH has been committed to helping organizations embrace technology, improve operational
+            efficiency, and accelerate digital transformation.
+          </p>
+          <p>
+            Our initial focus was on delivering comprehensive information technology solutions tailored to the diverse
+            needs of modern businesses. Over time, in response to evolving customer demands and emerging technological
+            trends, we expanded our services to provide a broader range of IT solutions, including software development,
+            system integration, IT consultancy, and digital transformation support.
+          </p>
+          <p>
+            At Intimate Techno Hub, we believe technology is not just a tool but a strategic driver of growth. By
+            combining innovation, expertise, and client-centric approaches, we strive to deliver reliable, scalable, and
+            future-ready solutions that help businesses achieve sustainable success.
+          </p>
+          <p>
+            Driven by a commitment to quality and continuous improvement, ITH aims to be a trusted technology partner
+            for organizations seeking excellence in the digital era.
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

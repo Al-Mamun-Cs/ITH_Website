@@ -1,0 +1,10 @@
+.many-stats {
+  .stat-card {
+    border-radius: 10px;
+    transition: transform .18s ease, box-shadow .18s ease;
+    &:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(20,20,35,0.06); }
+
+    .stat-icon { color: #1E5BB8; }
+    .stat-value { color: #F57C00; }
+  }
+}

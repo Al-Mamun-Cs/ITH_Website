@@ -1,0 +1,104 @@
+<section class="page-header">
+    <div class="overlay py-5">
+        <div class="container text-center text-white">
+        </div>
+    </div>
+</section>
+
+<section class="career-intro">
+    <div class="container" style="max-width: 1120px; padding-left: 5px; padding-right: 15px;">
+        <div class="row">
+            <!-- <div class="col-lg-12">
+                <h2>Why work with us?</h2>
+                <p class="text">Many Group is committed to creating an inclusive workplace...</p>
+                <ul>
+                    <li><strong>Growth:</strong> Structured learning and internal mobility.</li>
+                    <li><strong>Impact:</strong> Work on products used by thousands across industries.</li>
+                    <li><strong>Culture:</strong> Diverse teams with a people-first approach.</li>
+                </ul>
+            </div> -->
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 style="font-size: xx-large; text-align: center; font-family: times ten;">Benefits Include</h2>
+                <ul style="font-size: 16px; font-family: Arial; color: black;display: block !important;text-align: justify;">
+                    <li><strong>HR EXCELLENCE AND INNOVATION</strong> that leads to efficacious outcomes and move forward the organization whereas leveraging HR technology and remaining a financial steward.</li>
+                    <li><strong>TALENT HUNT AND RETENTION STRATEGIES</strong> including marketing and communication to attract and retain competent and diverse individuals to the organization. We are also focused to develop the HR System, Interactive learning event, Career preparation program and develop Business Growth Skill in potential future leaders.</li>
+                    <li><strong>INVESTING IN OUR EMPLOYEES’ DEVELOPMENT</strong> and intensifying our succession management programs that reinforce our strategy “Best of the Best”.</li>
+                    <li><strong>IMPROVING THE EMPLOYEE EXPERIENCE</strong> through an employee engagement culture, wellness, diversity and inclusion, that leads to complete employee well-being, productivity and retention.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="open-roles py-5 bg-light" style="position: relative; z-index: 10;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="mb-0" style="text-align: center; font-size: xx-large;color: #0DAC50;font-family: times ten;">Drop Your CV</h3>
+                
+                <form *ngIf="WebsiteCVForm" 
+                      class="m-4" 
+                      [formGroup]="WebsiteCVForm" 
+                      (ngSubmit)="onSubmit()"
+                      style="position: relative; z-index: 9999; pointer-events: auto;">
+                    
+                    <div class="row">
+						<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2"></div>
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+                            <mat-form-field class="example-full-width mb-3" appearance="outline">
+                                <mat-label>Job Type</mat-label>
+                                <mat-select formControlName="jobType">
+                                    <mat-option [value]="0">--Select One--</mat-option>
+                                    <mat-option [value]="1">Internship</mat-option>
+                                    <mat-option [value]="2">Entry-Level Jobs</mat-option>
+                                    <mat-option [value]="3">Mid-Level Jobs</mat-option>
+                                    <mat-option [value]="4">High-Level Jobs</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2"></div>
+
+<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2"></div>
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+                            <mat-form-field class="example-full-width mb-3" appearance="outline">
+                                <mat-label>Cover Letter</mat-label>
+                                <textarea matInput formControlName="coverLetter"></textarea>
+                            </mat-form-field>
+                        </div>
+<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2"></div>
+
+<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2"></div>
+                        <div class="col-xl-4 col-lg-4 col-md-3 col-sm-12 mb-2">
+                            <mat-form-field class="example-full-width mb-3" appearance="outline">
+                                <mat-label>Upload (Only PDF file)</mat-label>
+                                <ngx-mat-file-input formControlName="doc"
+                                    accept=".pdf">
+                                </ngx-mat-file-input>
+                                <mat-icon matSuffix>attachment</mat-icon>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2" style="text-align:center">
+                            <button type="submit" mat-raised-button color="primary">
+                                {{buttonText || 'Submit'}}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="apply-cta py-5">
+    <div class="container text-center">
+        <h4>Can't find your role?</h4>
+        <p class="text-muted">Send us your CV and a short note...</p>
+        <a class="btn btn-lg btn-outline-dark" href="mailto:hr@manygroup.com?subject=Speculative%20Application">Submit CV</a>
+    </div>
+</section> -->

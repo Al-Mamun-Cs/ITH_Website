@@ -1,0 +1,102 @@
+$many-primary: #9E2A8B;
+
+.products-section {
+	min-height: 70vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.container {
+		width: 100%;
+	}
+}
+
+.section-title {
+	font-weight: 300;
+	font-size: 2.5rem;
+	color: $many-primary;
+}
+
+.product-card {
+	border-radius: 12px;
+	overflow: hidden;
+	transition: transform 0.3s;
+	// border: 1px solid #eee;
+
+	&:hover {
+		transform: translateY(-5px);
+	}
+
+	.img-container {
+		position: relative;
+		width: 100%;
+		padding-top: 75%; // 4:3 Aspect Ratio container
+		background: #fff;
+		border-bottom: 1px solid #f0f0f0;
+		overflow: hidden;
+
+		.product-img {
+			position: absolute;
+			top: 0; left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: contain; // Ensures coiled cables aren't cropped
+			padding: 20px;
+			transition: transform 0.5s;
+		}
+
+		&:hover .product-img {
+			transform: scale(1.05);
+		}
+
+		.brand-tag {
+			position: absolute;
+			top: 15px;
+			left: 15px;
+			background: $many-primary;
+			padding: 4px 10px;
+			border-radius: 4px;
+		}
+	}
+
+	/* Carousel Navigation */
+	.product-nav {
+		margin-top: 1.5rem;
+		padding-top: 1rem;
+		border-top: 1px solid #eee;
+
+		.btn {
+			font-size: 12px;
+			padding: 6px 12px;
+			transition: all 0.3s ease;
+
+			&:hover {
+				color: $many-primary;
+				// border-color: $many-primary;
+				background-color: rgba(158, 42, 139, 0.05);
+			}
+		}
+
+		.product-indicators {
+			margin: 0 1rem;
+
+			.badge {
+				background-color: white !important;
+				transition: all 0.3s ease;
+
+				&.active {
+					background-color: $many-primary !important;
+					width: 12px;
+					height: 12px;
+					box-shadow: 0 0 0 3px rgba(158, 42, 139, 0.15);
+				}
+
+				&:hover {
+					background-color: $many-primary !important;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+

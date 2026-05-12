@@ -1,0 +1,262 @@
+// --- GLOBAL DESIGN TOKENS ---
+$many-primary: #1E5BB8;
+$many-accent: #FAAE1C;
+$many-dark: #1A1A2E;
+$many-white: #ffffff;
+$many-gray-light: #f8f9fa;
+
+// --- 1. TOP BAR ---
+.top-bar {
+  height: 40px;
+  background-color: $many-primary;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  
+  .social-icons i {
+    cursor: pointer;
+    margin-left: 15px;
+    opacity: 0.9;
+    &:hover { opacity: 1; }
+  }
+}
+
+// --- 2. NAVBAR (Global) ---
+.ssg-navbar {
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0;
+  position: relative;
+
+  .navbar-brand {
+    padding: 10px 15px;
+    margin-right: 2rem;
+  }
+
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .nav-item {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .ssg-mega-menu-trigger {
+      position: static !important; 
+    }
+
+    .nav-link {
+      color: #0A509F;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s;
+      cursor: pointer;
+      padding: 25px 15px !important;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      &:hover {
+        color: $many-primary;
+      }
+    }
+  }
+}
+
+// --- 3. STANDARD DROPDOWN STYLES ---
+.dropdown-menu {
+    border: none;
+    border-radius: 0 0 8px 8px; 
+    background-color: #ffffff;
+    
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 0 !important;
+    padding: 8px 0;
+    min-width: 240px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    
+    transform-origin: top left; 
+    display: none;
+
+    &.show {
+        display: block !important;
+        visibility: visible;
+        opacity: 1;
+        animation: dropdown-expand-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -8px; 
+        left: 20px; 
+        width: 0; height: 0; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #ffffff;
+        z-index: 10;
+    }
+
+   
+    &::after {
+        display: none !important;
+    }
+
+    .dropdown-item {
+        font-size: 14px; color: #444; padding: 10px 20px; font-weight: 500; 
+        transition: all 0.2s ease; cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:hover, &:focus { 
+            background-color: #f8f9fa; 
+            color: $many-primary; 
+            padding-left: 25px; 
+        }
+    }
+}
+
+@keyframes dropdown-expand-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) translateY(20px);
+  }
+  10% {
+    opacity: 0.1;
+    transform: scale(0.2) translateY(18px);
+  }
+  20% {
+    opacity: 0.2;
+    transform: scale(0.35) translateY(16px);
+  }
+  30% {
+    opacity: 0.3;
+    transform: scale(0.45) translateY(14px);
+  }
+  40% {
+    opacity: 0.45;
+    transform: scale(0.55) translateY(12px);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.65) translateY(10px);
+  }
+  60% {
+    opacity: 0.7;
+    transform: scale(0.75) translateY(7px);
+  }
+  70% {
+    opacity: 0.85;
+    transform: scale(0.85) translateY(5px);
+  }
+  80% {
+    opacity: 0.9;
+    transform: scale(0.93) translateY(3px);
+  }
+  90% {
+    opacity: 0.97;
+    transform: scale(0.97) translateY(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Dropdown menu style */
+.dropdown-menu {
+  animation: dropdown-expand-in 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  transform-origin: top center;
+}
+
+
+// --- 4. NESTED SUBMENU (The Right Side Fix) ---
+.dropdown-submenu {
+    position: relative; 
+
+    > .dropdown-menu {
+        top: 0 !important; 
+        left: 100% !important;
+        margin-left: 10px; 
+        margin-top: -8px !important;
+        border-radius: 8px;
+        display: none;
+        overflow: visible; 
+        width: 170px;
+        min-width: 170px;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 15px; 
+            left: -8px; 
+            width: 0; 
+            height: 0; 
+            display: block !important; 
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid #ffffff; 
+            border-left: none;
+        }
+    }
+
+    // Show on Hover
+    &:hover {
+        > .dropdown-menu {
+            display: block !important;
+            animation: dropdown-expand-in 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+            transform-origin: left center; 
+        }
+        > .dropdown-item {
+            color: $many-primary;
+            background-color: #f8f9fa;
+        }
+    }
+}
+
+// --- 5. MEGA MENU STYLES ---
+.mega-menu-container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: white;
+  z-index: 1100;
+  border-top: 1px solid #eee;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+
+  .menu-sidebar {
+    background-color: $many-gray-light;
+    border-right: 1px solid #eee;
+    min-height: 350px;
+    .list-group-item {
+      background: transparent; border: none; cursor: pointer; padding: 15px 20px; font-weight: 500; color: #555;
+      &.active, &:hover {
+        background-color: white; color: $many-primary; border-left: 4px solid $many-primary;
+      }
+    }
+  }
+}
+
+// --- ANIMATIONS ---
+@keyframes fadeInDropdown { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInRight { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+
+@media (min-width: 992px) {
+    .nav-item[ngbDropdown]:hover > .dropdown-menu {
+        display: block !important;
+        animation: dropdown-expand-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+}

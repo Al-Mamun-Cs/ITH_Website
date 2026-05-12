@@ -1,0 +1,119 @@
+<section class="awards-section bg-light">
+  <div class="container" style="max-width: 1120px; padding-left: 5px; padding-right: 15px;" *ngIf="awards.length > 0">
+
+    <div *ngIf="!isMobile" class="row align-items-center w-100 mx-0">
+      <div class="col-12 mb-4">
+        <h2 class="text-center" style="font-size: 30px;font-family: times ten; font-weight: bold; color: #11205F;">Awards & Achievements</h2>
+      </div>
+
+      <div class="col-md-7 mb-4 mb-md-0">
+        <h4 class="mb-3" style="font-size: 24px;font-family: times ten; font-weight: 600; color: #0DAC50;">
+          {{ awards[currentIndex].title }}
+        </h4>
+        <p class="mb-4" style="font-size: 16px; line-height: 1.6; text-align: justify;color: #11205F">
+          {{ awards[currentIndex].desc }}
+        </p>
+
+        <div class="mt-4 d-flex gap-3">
+          <button class="btn btn-sm rounded-circle shadow-sm" (click)="prev()"
+            style="background-color: white; color: #0DAC50;border: 2px solid #11205F; width: 35px; height: 35px;">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="btn btn-sm rounded-circle shadow-sm" (click)="next()"
+            style="background-color: white; color: #0DAC50; border: 2px solid #11205F;width: 35px; height: 35px;">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-md-5 text-end">
+        <div style="background: #fff; 
+              padding: 10px; 
+              border: 4px solid #0DAC50; /* Yellow Outer Border */
+              outline: 5px solid #11205F; /* Deep Blue Outer Outline */
+              display: inline-block; 
+              box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
+              border-radius: 15px;
+              margin: 10px;">
+
+          <div style="max-width: 250px; 
+                height: 300px; 
+                overflow: hidden; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center; 
+                background-color: #f1f1f1; 
+                border: 3px solid #0DAC50; /* Green Inner Border */
+                border-radius: 8px;">
+
+            <img [src]="awards[currentIndex].img" [alt]="awards[currentIndex].title"
+              style="width: 100%; height: 100%; object-fit: cover; display: block;"
+              onerror="this.src='assets/no-image.png'">
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 📱 Mobile View -->
+    <div *ngIf="isMobile" style="position: relative; width: 100%;">
+      <div class="col-12 mb-4">
+        <h2 class="text-center" style="font-size: 25px; font-weight: bold; color: #11205F;">Awards & Achievements</h2>
+      </div>
+      <div class="col-12 mb-4">
+        <h5 class="text-center" style="font-size: 11px; color: #11205F;">Over the past two decades, the actions of Many Group have led to the change of millions of lives. These awards are only a fraction of the reflection of the story the company has to offer.</h5>
+      </div>
+      <!-- LEFT BUTTON -->
+      <button (click)="prev()" style="position: absolute; left: 0; top: 68%; transform: translateY(-50%);
+           z-index: 10; background: white; border: 2px solid #11205F;
+           width: 35px; height: 35px; border-radius: 50%;">
+        <i class="fas fa-chevron-left" style="color:#0DAC50;"></i>
+      </button>
+
+      <!-- IMAGES -->
+      <div style="display: flex; justify-content: center; gap: 10px; padding: 0 45px;">
+
+        <div *ngFor="let award of getVisibleAwards()" style="flex: 1; max-width: 48%;">
+
+          <div style="background: #fff; 
+              padding: 10px; 
+              border: 4px solid #0DAC50; /* Yellow Outer Border */
+              outline: 5px solid #11205F; /* Deep Blue Outer Outline */
+              display: inline-block; 
+              box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
+              border-radius: 15px;
+              margin: 10px;">
+
+            <div style="max-width: 300px; 
+                height: 200px; 
+                overflow: hidden; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center; 
+                background-color: #f1f1f1; 
+                border: 3px solid #0DAC50; /* Green Inner Border */
+                border-radius: 8px;">
+
+              <img [src]="awards[currentIndex].img" [alt]="awards[currentIndex].title"
+                style="width: 100%; height: 100%; object-fit: cover; display: block;"
+                onerror="this.src='assets/no-image.png'">
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT BUTTON -->
+      <button (click)="next()" style="position: absolute; right: 0; top: 68%; transform: translateY(-50%);
+           z-index: 10; background: white; border: 2px solid #11205F;
+           width: 35px; height: 35px; border-radius: 50%;">
+        <i class="fas fa-chevron-right" style="color:#0DAC50;"></i>
+      </button>
+
+    </div>
+
+  </div>
+</section>

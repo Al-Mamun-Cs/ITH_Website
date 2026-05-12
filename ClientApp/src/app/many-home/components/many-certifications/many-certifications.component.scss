@@ -1,0 +1,124 @@
+$many-primary: #1E5BB8;
+$many-accent: #F57C00;
+
+.clients-section {
+  background: whitesmoke;
+  padding: 20px 0;
+
+  .section-heading {
+    font-size: 2.5rem;
+    color: $many-primary;
+    font-weight: 300;
+  }
+
+  .clients-carousel {
+    margin-top: 3rem;
+
+    .logo-display-wrapper {
+      background: white;
+      border: 2px solid #1E5BB8;
+      border-radius: 16px;
+      padding: 40px 20px;
+      box-shadow:#F57C00;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+
+      .client-logo-large {
+        max-height: 120px;
+        max-width: 80%;
+        object-fit: contain;
+        filter: grayscale(30%);
+        transition: all 0.4s ease;
+
+        &:hover {
+          filter: grayscale(0%);
+          transform: scale(1.05);
+        }
+      }
+
+      .client-name {
+        color: $many-primary;
+        font-size: 18px;
+        letter-spacing: 1px;
+        margin-top: 20px; /* Added margin for spacing */
+        font-weight: bold;
+      }
+    }
+
+    /* Carousel Controls */
+    .carousel-controls {
+      margin-top: 2rem;
+
+      .btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        font-size: 16px;
+
+        &:hover {
+          background-color: $many-primary;
+          color: #F57C00;
+          transform: scale(1.1);
+        }
+      }
+
+      /* Logo Indicators */
+      .logo-indicators {
+        .logo-dot {
+          width: 50px;
+          height: 50px;
+          border-radius: 8px;
+          /* Background properties removed because we use <img> tag now */
+          background-color: #fff; /* Changed to white so transparent logos look good */
+          border: 2px solid #e0e0e0;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          padding: 4px;
+          
+          /* New Flex properties to center the image inside the dot */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+
+          /* Image style inside the dot */
+          img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+          }
+
+          &:hover {
+            border-color: $many-primary;
+            transform: scale(1.05);
+          }
+
+          &.active {
+            border-color: $many-primary;
+            box-shadow: #F57C00;
+            //background-color: #0A509F;
+          }
+        }
+      }
+    }
+  }
+}
+
+.grayscale-hover {
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+  cursor: pointer;
+}
+
+.grayscale-hover:hover {
+  filter: grayscale(0%);
+}

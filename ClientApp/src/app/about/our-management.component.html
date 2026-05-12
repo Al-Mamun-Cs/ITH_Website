@@ -1,0 +1,50 @@
+<section class="management-content" *ngIf="dataSource.data?.length"
+  style="background-color: #f8f9fa; padding: 60px 0; min-height: 100vh; color: #11205F; overflow-x: hidden;">
+
+  <div class="container" style="max-width: 1120px; padding-left: 15px; padding-right: 15px;">
+
+    <div class="row align-items-start" *ngFor="let member of dataSource.data" style="margin-bottom: 100px !important;">
+
+      <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 p-0 text-center text-lg-start">
+        <div style="display: inline-block; width: 100%;max-width: 400px;height: 420px;background: #ffffff;border-radius: 20px; 
+    overflow: hidden;box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border-top: 8px solid #11205F; padding: 30px;position: relative;">
+
+          <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+            <img [src]="getEmployeeImage(member.images)" [alt]="member.name" 
+            style="width: 100%;max-width: 320px;height: 350px;object-fit: cover;border-radius: 12px;box-shadow: 0 8px 20px rgba(0,0,0,0.15);" onerror="this.src='assets/no-image.png'">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8 col-md-12 ps-lg-5 text-start" style="padding-right: 0;">
+        <div style="height: 420px; overflow-y: auto;padding-right: 15px;scrollbar-width: thin;scrollbar-color: #f8f9fa #f8f9fa;">
+
+        <h1 style="color: #11205F; font-weight: bold; font-size: calc(2rem + 1.2vw); margin: 0; line-height: 1.1;">
+          {{ member.name }}
+        </h1>
+
+        <div style="margin-top: 10px; margin-bottom: 25px;">
+          <h3 style="color: #11205F; font-size: calc(1.3rem + 0.3vw); margin: 5px 0; font-weight: 500;">
+            {{ member.designation }}
+          </h3>
+          <span style="color: #11205F; font-size: 1.1rem; display: block; letter-spacing: 0.5px;">
+            Techno Mole Creations Limited
+          </span>
+        </div>
+
+        <div style="margin-top: 20px;">
+          <p style="color: #11205F;line-height: 1.8;font-size: 1.1rem;margin: 0;text-align: justify;hyphens: auto;">
+            {{ member.descriptionsOne }} <br><br>
+            {{ member.descriptionsTwo }} <br><br>
+            {{ member.descriptionsThree }} <br><br>
+            {{ member.descriptionsFour }}
+          </p>
+        </div>
+
+      </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,39 @@
+<!-- <section class="page-header">
+	<div class="overlay py-5">
+		<div class="container text-center text-white">
+			
+		</div>
+	</div>
+</section> -->
+
+<section class="py-5" style="background-color: whitesmoke;">
+	<div class="container" style="max-width: 1150px; padding-left: 15px; padding-right: 20px;">
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let brand of dataSource.data">
+				<div
+					style="display: inline-block; width: 100%;max-width: 400px;height: 420px;background: #ffffff;border-radius: 20px; 
+   						 overflow: hidden;box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border-top: 8px solid #1E5BB8; padding: 30px;position: relative;">
+
+					<div style="display: flex; justify-content: center; margin-bottom: 20px;">
+						<img [src]="getEmployeeImage(brand.categoryImages)"
+							style="width: 100%;max-width: 300px;height: 300px;object-fit: cover;border-radius: 12px;box-shadow: 0 8px 20px rgba(0,0,0,0.15);"
+							onerror="this.src='assets/no-image.png'" />
+					</div>
+					<div
+						style="margin-top: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+						<h6
+							style="color: #11205F; font-family: 'Times Ten', serif;text-align: center; font-weight: bold; font-size: 1.2rem; margin: 0;">
+							{{ brand.typeName }}
+						</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="d-flex justify-content-center mt-4">
+			<mat-paginator [length]="paging.length" [showFirstLastButtons]="masterData.paging.showFirstLastButtons"
+				[pageSize]="paging.pageSize" [pageSizeOptions]="masterData.paging.pageSizeOptions"
+				(page)="pageChanged($event)">
+			</mat-paginator>
+		</div>
+	</div>
+</section>

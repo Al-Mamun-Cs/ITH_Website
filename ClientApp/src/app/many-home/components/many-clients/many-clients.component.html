@@ -1,0 +1,81 @@
+<section class="clients-section py-2 text-center text-white" style="background-color: #f8f9fa;">
+  <div class="container" style="max-width: 1200px; padding-left: 15px; padding-right: 15px;">
+    <h2 style="color: #1E5BB8; font-size: 30px;font-weight: 800; font-family: 'Times Ten', serif; margin-top: 15px;">Our Clients</h2>
+
+    <div class="d-flex align-items-center justify-content-center" style="position: relative;">
+      <!-- <button class="me-2" (click)="prev()" 
+        style="background-color: #f8f9fa; z-index: 10; border: 2px solid #11205F; border-radius: 50px; width: 35px; height: 35px; cursor: pointer;">
+        <i class="fas fa-chevron-left" style="color: #FAAE1C;"></i>
+      </button> -->
+
+      <div style="overflow: hidden; width: 100%; margin: 0 10px;">
+        
+        <div class="d-flex" 
+             [style.transform]="'translateX(-' + (activeIndex * (100 / visibleCount)) + '%)'"
+             [style.transition]="isTransitioning ? 'transform 0.7s ease-in-out' : 'none'"
+             style="transition: transform 0.7s ease-in-out; width: 100%;">
+
+          <div *ngFor="let brand of duplicatedData" 
+               [style.flex]="'0 0 ' + (100 / visibleCount) + '%'"
+               style="max-width: 370px; padding: 15px;">
+
+            <div style="
+                width: 100%;
+                height: 300px; 
+                background: #ffffff;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                border-top: 8px solid #1E5BB8;
+                padding: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;">
+
+              <div style="
+                  width: 100%;
+                  height: 180px;
+                  background-color: #ffffff;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 20px;
+                  overflow: hidden;">
+
+                <img [src]="brand.clientsImage ? getEmployeeImage(brand.clientsImage) : 'assets/images/default-logo.jpg'"
+                     [alt]="brand.supplierName"
+                     [style.padding]="!brand.clientsImage ? '40px' : '0px'"
+                     style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 10px; transition: 0.3s;"
+                     (error)="$event.target.src = 'assets/images/default-logo.jpg'">
+              </div>
+
+              <div style="text-align: center;">
+                <h6 style="color: #1E5BB8; font-family: 'Times Ten', serif; font-weight: bold; font-size: 1.1rem; margin: 0;">
+                  {{ brand.supplierName }}
+                </h6>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- <button class="ms-2" (click)="next()" 
+        style="background-color: #f8f9fa; z-index: 10; border: 2px solid #1E5BB8; border-radius: 50px; width: 35px; height: 35px; cursor: pointer;">
+        <i class="fas fa-chevron-right" style="color: #FAAE1C;"></i>
+      </button> -->
+    </div>
+
+    <div class="view" style="margin-top: 25px;">
+      <a class="nav-link" routerLink="/client" 
+         style="font-size: 20px; font-weight: bold; transition: 0.3s; text-decoration: none;" 
+         [style.color]="linkColor"         
+         (mouseover)="linkColor = '#FAAE1C'" 
+         (mouseleave)="linkColor = '#0A509F'">
+         View Details 
+      </a>
+    </div>
+
+  </div>
+</section>

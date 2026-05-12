@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Contracts\Persistence\ILeaveTypeRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.4" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+  
+    <ProjectReference Include="..\SchoolManagement.Domain\SchoolManagement.Domain.csproj" />
+  
+    <ProjectReference Include="..\SchoolManagement.Shared\SchoolManagement.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\AwardAndEvents\Handlers\Commands\" />
+    <Folder Include="Features\AwardAndEvents\Requests\Commands\" />
+    <Folder Include="Features\Brands\Handlers\Commands\" />
+    <Folder Include="Features\Brands\Requests\Commands\" />
+    <Folder Include="Features\EasyBikeTypes\Handlers\Commands\" />
+    <Folder Include="Features\EasyBikeTypes\Requests\Commands\" />
+    <Folder Include="Features\Empolyees\Handlers\Commands\" />
+    <Folder Include="Features\Empolyees\Requests\Commands\" />
+    <Folder Include="Features\Managements\Handlers\Commands\" />
+    <Folder Include="Features\Managements\Requests\Commands\" />
+    <Folder Include="Features\ProductTypes\Handlers\Commands\" />
+    <Folder Include="Features\ProductTypes\Requests\Commands\" />
+    <Folder Include="Features\Suppliers\Handlers\Commands\" />
+    <Folder Include="Features\Suppliers\Requests\Commands\" />
+    <Folder Include="Features\TvcVideos\Handlers\Commands\" />
+    <Folder Include="Features\TvcVideos\Requests\Commands\" />
+    <Folder Include="Features\Upozilas\Handlers\Commands\" />
+    <Folder Include="Features\Warehouses\Handlers\Commands\" />
+    <Folder Include="Features\Warehouses\Requests\Commands\" />
+    <Folder Include="Features\WebsiteCVs\Handlers\Queries\" />
+    <Folder Include="Features\WebsiteCVs\Requests\Queries\" />
+  </ItemGroup>
+
+</Project>

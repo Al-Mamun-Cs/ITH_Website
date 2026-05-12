@@ -1,0 +1,43 @@
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<div class="many-partners py-2 bg-white">
+  <div class="container" style="max-width: 1200px; display: flex; align-items: center;">
+
+    <!-- FIXED LEFT TEXT -->
+    <div style="flex: 0 0 250px;">
+      <h2 style=" font-size: 15px; color: #0A509F; font-weight: 800;margin: 0;display: flex;align-items: center; gap: 8px;">
+        Sister Concern of <img src="assets/images/hns_logo.jpeg" alt="TMCL Logo"
+          style="height: 18px; width: auto; opacity: 0.95;">
+      </h2>
+    </div>
+
+
+    <!-- SCROLL AREA -->
+    <div style="flex: 1; overflow: hidden; width: 730px;" #scrollContainer>
+
+      <div style="display: flex; width: max-content;">
+
+        <div style="display: flex; align-items: center; gap: 50px;">
+          <ng-container *ngFor="let brand of getLoopData()">
+            <img [src]="getEmployeeImage(brand.businessImages)"
+              style="width: 80px; height: 80px; object-fit: contain;" />
+          </ng-container>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

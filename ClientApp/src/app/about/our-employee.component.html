@@ -1,0 +1,32 @@
+<section class="py-5">
+  <div class="container" style="max-width: 1120px; padding-left: 15px; padding-right: 0px;">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let brand of dataSource.data">
+        <div
+          style="display: inline-block; width: 100%;max-width: 400px;height: 420px;background: #ffffff;border-radius: 20px; 
+    overflow: hidden;box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border-top: 8px solid #11205F; padding: 30px;position: relative;">
+
+          <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+            <img [src]="brand.image ? getEmployeeImage(brand.image) : 'assets/images/default_employee.png'"
+              [alt]="brand.supplierName" (error)="$event.target.src = 'assets/images/default_employee.png'"
+              style="width: 100%;max-width: 320px;height: 300px;object-fit: cover;border-radius: 12px;box-shadow: 0 8px 20px rgba(0,0,0,0.15);"
+              onerror="this.src='assets/no-image.png'">
+          </div>
+
+          <div style="margin-top: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+            <h6
+              style="color: #11205F; font-family: 'Times Ten', serif;text-align: center; font-weight: bold; font-size: 1.2rem; margin: 0;">
+              {{ brand.name }}
+            </h6>
+
+            <h6 style="color: black; font-size: 1rem; font-weight: 500; margin: 0; text-align: center;">
+              {{ brand.designation }}
+            </h6>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

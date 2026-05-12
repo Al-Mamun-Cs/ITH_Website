@@ -1,0 +1,10 @@
+.many-footer {
+  .cta-strip { background: linear-gradient(90deg, #d03dbd 0%, #9E2A8B 100%); }
+  .main-footer { background-color: #0D3E91; }
+  //.copyright { background-color: #0DAC50; color: whitesmoke; border-top: 1px solid rgba(255,255,255,0.05); }
+  a:hover { color: #0DAC50 !important; text-decoration: underline !important; }
+  .logo img { max-width: 120px; }
+}
+
+/* keep utility fallback */
+.app-footer { a { color: inherit; } .text-white-50 { opacity: 0.8; } }

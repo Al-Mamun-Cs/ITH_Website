@@ -1,0 +1,281 @@
+// --- DESIGN TOKENS ---
+$many-primary: #9E2A8B;
+$many-accent: #F57C00;
+$many-dark: #1A1A2E;
+$many-white: #ffffff;
+$many-gray-light: #f8f9fa;
+
+// --- TOP BAR ---
+.top-bar {
+  height: 40px;
+  background-color: $many-primary;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+// --- NAVBAR (Global Styles) ---
+.ssg-navbar {
+  background-color: rgba(255, 255, 255, 0.98); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0; 
+
+  .navbar-brand {
+    padding: 10px 15px;
+  }
+
+  // --- MAIN MENU ---
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    height: 100%; 
+
+    .nav-item {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      
+      // CRITICAL FIX FOR STANDARD DROPDOWNS
+      // This allows the standard dropdown to align to the text
+      position: relative; 
+    }
+
+    .nav-link {
+      color: #333;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s;
+      cursor: pointer;
+      
+      // Spacing
+      padding: 25px 15px; 
+      margin: 0; 
+      
+      display: flex;       
+      align-items: center; 
+      gap: 5px;            
+
+      &:hover {
+        color: $many-primary;
+      }
+      .transition-icon { transition: transform 0.3s ease; }
+    }
+  }
+
+  // --- MEGA MENU SPECIFIC OVERRIDES ---
+  // FIX: This restores the Brands menu. 
+  // We force position: static so the child container can be 100% width of the Navbar, not the Item.
+  .ssg-mega-menu-trigger {
+    position: static !important; 
+
+    &:hover .mega-menu-container {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      top: 100%;
+    }
+    &.mobile-open .mega-menu-container {
+      display: block; opacity: 1; visibility: visible;
+    }
+    &.mobile-open .transition-icon { transform: rotate(180deg); }
+  }
+
+  .mega-menu-container {
+    display: none;
+    position: absolute;
+    left: 0; right: 0; top: 100%;
+    background: white;
+    width: 100%;
+    z-index: 1100;
+    border-top: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+    .menu-sidebar {
+      background-color: $many-gray-light;
+      border-right: 1px solid #eee;
+      min-height: 350px;
+      .list-group-item {
+        background: transparent; border: none; cursor: pointer; padding: 15px 20px; font-weight: 500; color: #555;
+        &.active, &:hover {
+          background-color: white; color: $many-primary; border-left: 4px solid $many-primary;
+          .icon-wrap { transform: scale(1.1); }
+        }
+      }
+    }
+    .menu-content {
+      a { text-decoration: none; color: #666; font-size: 14px; &:hover { color: $many-primary; text-decoration: underline; } }
+    }
+  }
+}
+
+// --- STANDARD DROPDOWN STYLES ---
+.dropdown-menu {
+    border: none;
+    // Flat top to connect with the notch
+    border-radius: 0 0 8px 8px; 
+    background-color: #ffffff;
+    
+    // Position Logic
+    top: 100%;
+    left: 0 !important;   // Align to Left of text
+    right: auto;
+    transform: none !important; 
+    margin-top: 0 !important;
+    
+    padding: 8px 0;
+    min-width: 260px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    display: none; // Hidden default, shown on hover
+
+    // --- FIX: THE NOTCH (TRIANGLE) ---
+    // This creates the white triangle pointing up on the LEFT side
+    &::before {
+        content: '';
+        position: absolute;
+        top: -8px; // Move above the box
+        left: 30px; // Position on the LEFT side (aligns with text padding)
+        width: 0; 
+        height: 0; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid #ffffff; // The color of the arrow
+    }
+
+    .dropdown-item {
+        font-size: 14px; color: #444; padding: 10px 20px; font-weight: 500; transition: all 0.2s ease; cursor: pointer; position: relative;
+        &:hover, &:focus { background-color: #f8f9fa; color: $many-primary; padding-left: 25px; }
+    }
+    .dropdown-divider { border-top: 1px solid #f0f0f0; margin: 8px 0; }
+}
+
+// Remove default caret
+.dropdown-toggle::after { display: none; }
+
+// --- SUBMENU (Flyout) ---
+.dropdown-submenu {
+    position: relative; 
+    .submenu-flyout {
+        display: none;
+        position: absolute;
+        top: 0; left: 100%; margin-left: -2px;
+        border-radius: 4px; min-width: 200px; background: #fff; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); padding: 8px 0;
+    }
+    &:hover {
+        > .submenu-flyout { display: block; animation: fadeInRight 0.2s ease; }
+        > .dropdown-item { color: $many-primary; background-color: #f8f9fa; }
+    }
+}
+
+// --- HERO SECTION ---
+.ssg-hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  .container { width: 100%; padding-top: 60px; padding-bottom: 60px; z-index: 2; }
+  .ssg-h1 { font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 1.5rem; }
+  .subtitle { font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: $many-primary; margin-bottom: 1rem; font-weight: 700; }
+  .btn {
+    font-weight: 600; padding: 12px 40px; transition: all 0.3s ease;
+    &:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(158, 42, 139, 0.3); }
+  }
+}
+
+.custom-shape-divider-bottom-1670000000 {
+    position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; transform: rotate(180deg); 
+    svg { position: relative; display: block; width: calc(150% + 1.3px); height: 80px; }
+    .shape-fill { fill: $many-white; }
+}
+
+// --- ROUNDED OUTLINE ---
+.ssg-rounded-outline {
+    position: relative; display: inline-block; z-index: 1;
+    &::before {
+      content: ''; position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px;
+      border: 2px solid $many-accent; border-radius: 50% 60% 70% 40% / 40% 50% 60% 50%; z-index: -1; animation: morph 6s ease-in-out infinite;
+    }
+    img {
+      border-radius: 50% 60% 70% 40% / 40% 50% 60% 50%; border: 5px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      display: block; width: 100%; height: 550px; object-fit: contain;
+    }
+}
+
+// --- UTILITY ---
+.many-h2 { font-size: 36px; font-weight: 300; color: $many-dark; text-transform: capitalize; }
+
+// --- ANIMATIONS ---
+@keyframes morph {
+    0% { border-radius: 50% 60% 70% 40% / 40% 50% 60% 50%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: rotate(5deg); }
+    100% { border-radius: 50% 60% 70% 40% / 40% 50% 60% 50%; }
+}
+@keyframes fadeInDropdown { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInRight { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+
+
+// ==========================================
+// DESKTOP ONLY LOGIC (HOVER & ALIGNMENT)
+// ==========================================
+@media (min-width: 992px) {
+  // HOVER EFFECT: This enables hover for all dropdowns on Desktop
+  // EXCLUDES the Mega Menu trigger (handled separately)
+  .nav-item[ngbDropdown]:hover > .dropdown-menu {
+      display: block;
+      animation: fadeInDropdown 0.2s ease;
+  }
+}
+
+
+// ==========================================
+// MOBILE RESPONSIVE OVERRIDES (< 992px)
+// ==========================================
+@media (max-width: 991.98px) {
+  .top-bar { display: none; }
+  .ssg-navbar {
+    padding: 0.75rem 1rem; background-color: rgba(255, 255, 255, 1);
+    .navbar-toggler {
+      border: 1px solid $many-primary; width: 44px; height: 44px; &:focus { outline: none; }
+      .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%239E2A8B' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+    }
+    .navbar-nav {
+      height: auto; flex-direction: column; align-items: flex-start !important; padding-top: 1rem;
+      .nav-item { width: 100%; height: auto; display: block; position: static; } // Static on mobile
+      .nav-link { padding: 12px 0; border-bottom: 1px solid #f5f5f5; justify-content: space-between; }
+    }
+    .ssg-mega-menu-trigger {
+      width: 100%;
+      .mega-menu-container { position: static; display: none; opacity: 0; visibility: hidden; transition: all 0.3s; }
+      &.mobile-open .mega-menu-container { display: block; opacity: 1; visibility: visible; }
+    }
+  }
+
+  // MOBILE DROPDOWN (Stacking)
+  .dropdown-menu {
+      position: static !important; float: none; display: none;
+      margin-top: 0 !important; box-shadow: none !important; background: transparent !important; padding-left: 20px;
+      animation: none; transform: none !important; width: 100%;
+      
+      // Hide the notch on mobile
+      &::before { display: none; }
+      
+      &.show { display: block; }
+
+      .dropdown-item {
+          padding: 8px 0; color: #666 !important;
+          &:hover { color: $many-primary !important; background: transparent; }
+      }
+  }
+
+  .dropdown-submenu {
+      .submenu-flyout { position: static; display: block; margin-left: 15px; padding-left: 15px; border-left: 2px solid #eee; box-shadow: none !important; background: transparent; width: 100%; }
+      &:hover > .submenu-flyout { display: block; }
+  }
+
+  .many-hero { height: 400px; .many-h1 { font-size: 32px; } }
+  .many-h2 { font-size: 28px; }
+  .mega-menu-container {
+    .menu-sidebar { min-height: auto; display: flex; flex-wrap: wrap; .list-group-item { flex: 0 0 50%; border: 1px solid #eee; text-align: center; } }
+    .menu-content { padding: 1rem !important; }
+  }
+}

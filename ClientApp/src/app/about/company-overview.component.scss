@@ -1,0 +1,118 @@
+$ssg-primary: #0A509F; // Purple
+$ssg-yellow: #FAAE1C;  // Yellow
+$ssg-dark: #0A509F;
+
+// 1. HERO (Simple White/Light)
+.overview-hero {
+  padding: 60px 0 20px;
+  background: #fff;
+  text-align: center;
+
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #11205F;
+    text-transform: capitalize;
+  }
+}
+
+// 2. MAIN SECTION
+.overview-section {
+  padding: 40px 0 80px;
+  background-color: #fff;
+
+  // ICON CIRCLES
+  .icon-circle {
+    width: 140px;
+    height: 140px;
+    background-color: #fff; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 25px rgba(253, 185, 19, 0.3);
+
+    // .icon-img {
+    //   width: 85%;
+    //   height: auto;
+    //   filter: invert(23%) sepia(51%) saturate(3024%) hue-rotate(293deg) brightness(88%) contrast(98%);
+    // }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(253, 185, 19, 0.5);
+    }
+  }
+
+  // TITLES
+  .card-title {
+    color: $ssg-primary;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+
+    .fw-bold {
+      font-weight: 800;
+    }
+  }
+
+  // TEXT
+  .card-text {
+    color: #11205F;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 320px;
+    margin: 0 auto;
+
+    strong {
+      font-weight: 700;
+      color: #000;
+    }
+  }
+
+  .values-list {
+    div {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+  }
+
+  // STORY SECTION
+  .story-title {
+    color: $ssg-primary;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  .story-text {
+    p {
+      color: #11205F;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// ANIMATIONS
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

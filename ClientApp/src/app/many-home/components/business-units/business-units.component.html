@@ -1,0 +1,86 @@
+<section class="business-units-section py-4">
+  <div class="container" style="max-width: 1200px; padding-left: 30px; padding-right: 15px;">
+    <div class="d-flex flex-column align-items-center justify-content-center mb-5 text-center">
+      <div>
+        <h2 class="many-h2" style="font-size: 30px;color: #11205F;font-family: times ten;">All Sister Concern of HNS Group</h2>
+        <p class="text-muted mb-0">Our main business Automobiles.</p>
+      </div>
+
+    </div>
+
+    <div class="units-single">
+      <div class="unit-card slide-fade">
+        <div class="row align-items-center mb-4" *ngFor="let brand of getVisibleBusiness()">
+
+          <!-- LEFT: IMAGE -->
+          <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
+            <div class="d-flex justify-content-center">
+              <div style="width: 100%; max-width: 520px;">
+                <div
+                  style="width: 100%;aspect-ratio: 4 / 3;overflow: hidden;display: flex;align-items: center;justify-content: center;">
+                  <img [src]="getEmployeeImage(brand.businessImages)" [alt]="brand.typeName" class="img-fluid"
+                    style="width: 100%;height: 100%;object-fit: contain;" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- RIGHT: CONTENT -->
+          <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
+            <div class="unit-content">
+              <h3 class="unit-title"
+                style="font-family: times ten; font-weight: bold; margin-bottom: 1rem;">
+                {{ brand.businessUnitName }}
+              </h3>
+
+              <div style="font-size: 20px; color: #555; line-height: 1.8; text-align: justify; padding-right: 3rem;">
+
+                <span style="display: inline;">
+                  {{ expandedIndex === activeIndex ? brand.bussinessUnitDescriptions : (brand.bussinessUnitDescriptions
+                  | slice:0:380) }}
+                </span>
+
+                <span *ngIf="isLongText(brand.bussinessUnitDescriptions)" (click)="toggleView(activeIndex)"
+                  style="color: #0DAC50; font-weight: 600; cursor: pointer; white-space: nowrap; display: inline-block;">
+                  {{ expandedIndex === activeIndex ? '... View Less' : '... View More' }}
+                </span>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center mt-5" style="margin-top: 0px;">
+            <div class="col-md-12">
+              <div class="carousel-controls d-flex gap-3 justify-content-center align-items-center">
+
+                <button class="btn btn-sm" (click)="prev()">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="logo-indicators d-flex gap-2 flex-wrap justify-content-center">
+                  <div class="logo-dot" *ngFor="let brand of dataSource.data; let i = index"
+                    (click)="currentIndex = i; activeIndex = i"
+                    [style.border]="i === currentIndex ? '2px solid #11205F' : '2px solid #ddd'"
+                    style="width: 60px; height: 60px; border-radius: 8px; overflow: hidden; cursor: pointer; background: white; padding: 5px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+
+                    <img [src]="getEmployeeImage(brand.businessImages)" [alt]="brand.businessUnitName"
+                      style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                  </div>
+                </div>
+
+                <button class="btn btn-sm" (click)="next()">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

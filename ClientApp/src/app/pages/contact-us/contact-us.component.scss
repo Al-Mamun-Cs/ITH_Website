@@ -1,0 +1,144 @@
+$primary-color: #1E5BB8; // Corporate Purple
+$text-dark: #2c3e50;
+$text-muted: #6c757d;
+$bg-light: #f8f9fa;
+
+// --- HERO SECTION ---
+.page-header {
+  height: 350px;
+  background-image: url('../../../assets/images/management-main-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  
+  .overlay {
+    background: rgba(44, 6, 40, 0.75); // Dark purple tint
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  }
+  
+  .hero-subtitle { 
+    color: rgba(255,255,255,0.8); 
+    letter-spacing: 3px; 
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .hero-title { 
+    color: #fff; 
+    font-size: 3.5rem; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+  }
+}
+
+// --- INFO CARD (Head Office) ---
+.info-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); // Soft shadow
+  border-top: 5px solid $primary-color; // Purple top border
+  height: 100%;
+
+  .info-title {
+    color: $primary-color;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .info-divider {
+    width: 50px;
+    height: 3px;
+    background-color: #eee;
+    margin-bottom: 30px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+
+    &:last-child { margin-bottom: 0; }
+
+    .icon-box {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, $primary-color, lighten($primary-color, 10%)); // Gradient Purple
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.2rem;
+      margin-right: 20px;
+      flex-shrink: 0;
+      box-shadow: 0 5px 15px rgba(158, 42, 139, 0.3); // Purple shadow glow
+    }
+
+    .contact-details {
+      .label {
+        display: block;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        color: #999;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+      }
+      .value {
+        color: $text-dark;
+        font-weight: 500;
+        font-size: 1.1rem;
+        margin: 0;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+// --- FORM SECTION ---
+.form-wrapper {
+  background: #fff;
+  padding: 10px; // Minimal padding, relies on grid spacing
+}
+
+.section-title {
+  color: $text-dark;
+  font-weight: 700;
+  border-left: 4px solid $primary-color;
+  padding-left: 15px;
+}
+
+// Bootstrap Floating Label overrides
+.form-floating {
+  > .form-control {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 0.25rem rgba(158, 42, 139, 0.15);
+    }
+  }
+  > label {
+    color: #999;
+  }
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  padding: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(158, 42, 139, 0.3);
+  }
+}
+
+.map-section iframe {
+  filter: grayscale(20%); // Optional: slightly desaturate map for elegance
+}

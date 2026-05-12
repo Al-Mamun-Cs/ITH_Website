@@ -1,0 +1,9 @@
+$many-primary: #9E2A8B;
+$many-dark: #1A1A2E;
+
+.many-footer {
+  .cta-strip { background: linear-gradient(90deg, #d03dbd 0%, $many-primary 100%); }
+  .main-footer { background-color: $many-dark; }
+  .copyright { background-color: darken($many-dark, 5%); border-top: 1px solid rgba(255,255,255,0.05); }
+  a:hover { color: #fff !important; text-decoration: underline !important; }
+}

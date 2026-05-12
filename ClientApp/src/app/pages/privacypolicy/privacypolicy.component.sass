@@ -1,0 +1,60 @@
+// Career page styles (indented SASS syntax)
+$many-primary: #9E2A8B
+
+.page-header
+  height: 540px
+  background-image: url('/assets/images/Join-Many-Group.png')
+  background-size: cover
+  background-position: center
+  display: flex
+  align-items: center
+  color: #fff
+  position: relative
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6)
+
+  .overlay
+    width: 100%
+    padding: 3rem 0
+    background-color: transparent
+
+  .hero-subtitle
+    letter-spacing: 2px
+    text-transform: uppercase
+    opacity: 0.9
+    margin-bottom: 0.5rem
+
+  .hero-title
+    font-size: 2.6rem
+    font-weight: 700
+    margin: 0
+
+.career-intro
+  h2
+    color: $many-primary
+    margin-bottom: 1rem
+
+  ul
+    li
+      margin-bottom: 0.6rem
+
+.open-roles
+  .card
+    border: none
+    transition: transform 0.18s ease, box-shadow 0.18s ease
+    &:hover
+      transform: translateY(-6px)
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12)
+
+.apply-cta
+  background: transparent
+  .btn
+    border-width: 2px
+    padding: 0.6rem 1.25rem
+
+// Responsive tweaks
+@media (max-width: 767px)
+  .page-header
+    .hero-title
+      font-size: 1.8rem
+  .open-roles .card
+    margin-bottom: 1rem

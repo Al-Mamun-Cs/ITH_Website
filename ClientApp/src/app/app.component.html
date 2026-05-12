@@ -1,0 +1,322 @@
+<div
+  style="position: sticky; top: 0; z-index: 1050; width: 100%; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container-fluid d-flex justify-content-between align-items-center h-100 flex-nowrap"
+      style="max-width:1190px; margin:auto; padding:5px 40px; background-color:#1E5BB8; color:white;">
+
+      <p class="large" style="margin:0; white-space:nowrap; padding-left:10px;">
+        <span style="font-size:16px; font-family:'Times New Roman', Times, serif;">
+          <i class="fas fa-phone" style="color: #F57C00;margin-right:6px;"></i> +880 1714-566619
+        </span>
+      </p>
+
+      <!-- <div class="d-flex d-md-none" style="gap: 12px; font-size: 16px;">
+        <a href="https://www.facebook.com/manyelectricals/" target="_blank" style="color: #1877F2;"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/many_electricals/" target="_blank" style="color: #E1306C;"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@many_electricals" target="_blank" style="color: #000000;">
+          <svg style="width: 14px; fill: currentColor; margin-top: -3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17h0A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z" /></svg>
+        </a>
+        <a href="https://www.youtube.com/@many_electricals" target="_blank" style="color: #FF0000;"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/company/manyelectricals" target="_blank" style="color: #0077B5;"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.threads.com/@many_electricals" target="_blank" style="color: #000000;"><i class="fas fa-at"></i></a>
+      </div> -->
+
+      <p class="large" style="margin:0; white-space:nowrap; padding-right:10px;">
+        <span style="font-size:16px; font-family:'Times New Roman', Times, serif;">
+          <i class="fa fa-calendar" style="color:#F57C00; margin-right:8px;"></i>Since 2021
+        </span>
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light ssg-navbar">
+    <div class="container-fluid d-flex align-items-center" style="max-width:1190px; margin:auto; padding:0 40px;">
+
+      <a class="navbar-brand" style="width: auto; margin:0; padding:0; display:flex; align-items:center;">
+        <img src="assets/images/ITH_Logo.png" alt="SSG Logo" style="height:30px; width:auto;">
+      </a>
+
+      <button class="navbar-toggler" type="button" (click)="isMobileMenuOpen = !isMobileMenuOpen"
+        style="border:none; background-color:transparent;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" *ngIf="!isMobile" style="flex:1; display:flex; justify-content:flex-end;">
+        <ul class="navbar-nav align-items-center"
+          style="display:flex; flex-direction:row; justify-content:flex-end; gap:15px; width:100%;">
+
+          <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
+              routerLink="/">Home</a></li>
+
+         
+          <li class="nav-item" ngbDropdown display="static"> <a class="nav-link d-flex align-items-center"
+              style="transform: scale(1.2); transform-origin: left center;" tabindex="0" ngbDropdownToggle
+              id="aboutDropdown">
+              About Us
+            </a>
+            <div ngbDropdownMenu aria-labelledby="aboutDropdown" class="dropdown-menu shadow custom-dropdown-animation">
+              <a ngbDropdownItem routerLink="/about/overview" style="font-size:32px;">Company Overview</a>
+              <a ngbDropdownItem routerLink="/about/management" style="font-size:32px;">Our Management</a>
+              <a ngbDropdownItem routerLink="/about/employee">Our Employees</a>
+            </div>
+          </li>
+
+          <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
+              routerLink="/brand">Our Product</a></li>
+
+          <li class="nav-item" ngbDropdown display="dynamic">
+            <a class="nav-link d-flex align-items-center" style="transform: scale(1.2); transform-origin: left center;"
+              tabindex="0" ngbDropdownToggle id="businessDropdown">
+              Business Units
+            </a>
+            <div ngbDropdownMenu aria-labelledby="businessDropdown" class="dropdown-menu shadow">
+              <span class="dropdown-item disabled" *ngIf="businessUnits.length === 0">Loading...</span>
+              <a class="dropdown-item" *ngFor="let unit of businessUnits"
+                [routerLink]="['/business/business', unit.warehouseId]" style="cursor: pointer;">
+                {{ unit.businessUnitName }}
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
+              routerLink="/client">Clients</a></li>
+
+          <li class="nav-item dropdown" ngbDropdown #mediaDropdown="ngbDropdown">
+            <a class="nav-link d-flex align-items-center" style="transform: scale(1.2); transform-origin: left center;"
+              ngbDropdownToggle>Media Corner</a>
+            <ul ngbDropdownMenu class="dropdown-menu shadow">
+
+              <li>
+                <button ngbDropdownItem type="button" (click)="navigateTo('/media/awards'); mediaDropdown.close()" style="cursor: pointer;">
+                  Awards & Achievements
+                </button>
+              </li>
+
+              <!-- Media Center submenu -->
+              <li ngbDropdown class="dropdown-submenu" #mediaCenterDropdown="ngbDropdown"
+                (mouseenter)="mediaCenterDropdown.open()" (mouseleave)="mediaCenterDropdown.close()"
+                placement="right-top"> <button ngbDropdownItem type="button" ngbDropdownToggle
+                  class="d-flex align-items-center">
+                  Media Center
+                </button>
+
+                <ul ngbDropdownMenu class="dropdown-menu">
+                  <li>
+                    <button ngbDropdownItem type="button"
+                      (click)="navigateTo('/media/tvc'); mediaCenterDropdown.close()">
+                      TVC & AV
+                    </button>
+                  </li>
+                  <li>
+                    <button ngbDropdownItem type="button"
+                      (click)="navigateTo('/media/press'); mediaCenterDropdown.close()">
+                      Press Ad
+                    </button>
+                  </li>
+                </ul>
+              </li>
+
+
+              <!-- News -->
+              <li>
+                <button ngbDropdownItem type="button" (click)="navigateTo('/media/news'); mediaDropdown.close()">
+                  Events
+                </button>
+              </li>
+
+            </ul>
+          </li>
+
+
+
+
+
+          <!-- <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
+              href="http://217.217.254.11:8092/#/many-home" target="_blank">eShop</a></li> -->
+          <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"> <a class="nav-link"
+              routerLink="/career" routerLinkActive="active">Career</a></li>
+          <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
+              routerLink="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+
+    </div>
+  </nav>
+
+  <div *ngIf="isMobileMenuOpen && isMobile" (click)="isMobileMenuOpen=false" style="position:fixed;top:0;left:0;width:100vw;height:100vh;
+            background:rgba(0,0,0,.4);z-index:1040;">
+  </div>
+
+  <!-- DRAWER -->
+  <div *ngIf="isMobileMenuOpen && isMobile" style="position:fixed;top:0;left:0;width:280px;height:100vh;
+            background:#fff;z-index:1050;padding:15px;overflow:auto;">
+
+    <!-- Close -->
+    <div style="text-align:right">
+      <button (click)="isMobileMenuOpen=false" style="border:none;background:none;font-size:22px;">✕</button>
+    </div>
+
+    <ul style="list-style:none;padding:0;margin:0">
+
+      <!-- HOME -->
+      <li style="padding:10px 0">
+        <a routerLink="/" (click)="isMobileMenuOpen=false">Home</a>
+      </li>
+
+      <!-- ABOUT US -->
+      <li style="padding:10px 0;cursor:pointer" (click)="mobileAboutOpen=!mobileAboutOpen">
+        <strong>About Us</strong>
+        <span>{{ mobileAboutOpen ? '▲' : '▼' }}</span>
+      </li>
+
+      <ul *ngIf="mobileAboutOpen" style="list-style:none;padding-left:15px">
+        <li style="padding:6px 0">
+          <a routerLink="/about/overview" (click)="isMobileMenuOpen=false">Company Overview</a>
+        </li>
+        <li style="padding:6px 0">
+          <a routerLink="/about/management" (click)="isMobileMenuOpen=false">Our Management</a>
+        </li>
+        <li style="padding:6px 0">
+          <a routerLink="/about/employee" (click)="isMobileMenuOpen=false">Our Employees</a>
+        </li>
+      </ul>
+
+      <!-- BRAND -->
+      <li style="padding:10px 0">
+        <a routerLink="/brand" (click)="isMobileMenuOpen=false">Our Product</a>
+      </li>
+
+      <!-- BUSINESS UNITS (MOBILE) -->
+      <li style="padding:10px 0; cursor:pointer" (click)="mobileBusinessOpen = !mobileBusinessOpen">
+        <strong>Business Units</strong>
+        <span>{{ mobileBusinessOpen ? '▲' : '▼' }}</span>
+      </li>
+
+      <ul *ngIf="mobileBusinessOpen" style="list-style:none;padding-left:15px">
+
+        <li *ngIf="businessUnits.length === 0" style="padding:6px 0">
+          Loading...
+        </li>
+
+        <li *ngFor="let unit of businessUnits" style="padding:6px 0; cursor:pointer"
+          (click)="navigateTo('/business/business/' + unit.warehouseId); isMobileMenuOpen=false">
+          {{ unit.businessUnitName }}
+        </li>
+
+      </ul>
+
+
+      <!-- CLIENT -->
+      <li style="padding:10px 0">
+        <a routerLink="/client" (click)="isMobileMenuOpen=false">Clients</a>
+      </li>
+
+      <!-- MEDIA CORNER -->
+      <li style="padding:10px 0;cursor:pointer" (click)="mobileMediaOpen=!mobileMediaOpen">
+        <strong>Media Corner</strong>
+        <span>{{ mobileMediaOpen ? '▲' : '▼' }}</span>
+      </li>
+
+      <ul *ngIf="mobileMediaOpen" style="list-style:none;padding-left:15px">
+
+        <li style="padding:6px 0" (click)="navigateTo('/media/awards');isMobileMenuOpen=false">
+          Awards & Achievements
+        </li>
+
+        <!-- MEDIA CENTER -->
+        <li style="padding:6px 0;cursor:pointer" (click)="mobileMediaCenterOpen=!mobileMediaCenterOpen">
+          Media Center
+          <span>{{ mobileMediaCenterOpen ? '▲' : '▼' }}</span>
+        </li>
+
+        <ul *ngIf="mobileMediaCenterOpen" style="list-style:none;padding-left:15px">
+          <li style="padding:6px 0" (click)="navigateTo('/media/tvc');isMobileMenuOpen=false">
+            TVC & AV
+          </li>
+          <li style="padding:6px 0" (click)="navigateTo('/media/press');isMobileMenuOpen=false">
+            Press Ad
+          </li>
+        </ul>
+
+        <li style="padding:6px 0" (click)="navigateTo('/media/news');isMobileMenuOpen=false">
+          Events
+        </li>
+
+      </ul>
+
+      <!-- ESHOP -->
+      <li style="padding:10px 0">
+        <a href="http://217.217.254.11:8092/#/many-home" target="_blank" (click)="isMobileMenuOpen=false">eShop</a>
+      </li>
+      <!-- <li class="nav-item"> <a class="nav-link" routerLink="/career" routerLinkActive="active">Career</a></li> -->
+      <li style="padding:10px 0">
+        <a routerLink="/career" (click)="isMobileMenuOpen=false">Career</a>
+      </li>
+      <!-- CONTACT -->
+      <li style="padding:10px 0">
+        <a routerLink="/contact-us" (click)="isMobileMenuOpen=false">Contact Us</a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<!-- Social Sidebar -->
+<!-- <div class="d-none d-md-flex"
+  style="position: fixed; right: 0; top: 12%; z-index: 9999; display: flex; flex-direction: column; gap: 4px;">
+  <button (click)="socialOpen = !socialOpen"
+    style="width: 35px; height: 35px; border-radius: 50%; background-color: #11205F; color: white; border: none; cursor: pointer; margin-bottom: 5px;">
+    <i class="fas" [ngClass]="{'fa-angle-right': socialOpen, 'fa-angle-left': !socialOpen}"></i>
+  </button>
+
+  <ng-container *ngIf="socialOpen">
+    <a href="https://www.facebook.com/manyelectricals/" target="_blank" class="d-flex align-items-center text-white"
+      style="background-color: rgba(24,119,242,0.85); width: 150px; height: 45px; padding-left: 12px; border-radius: 5px 0 0 5px; box-shadow: -2px 2px 5px rgba(0,0,0,0.2); text-decoration: none;">
+      <i class="fab fa-facebook-f" style="width: 25px; font-size: 18px;"></i>
+      <span style="font-size: 13px; font-weight: 700; margin-left: 10px;">Facebook</span>
+    </a>
+
+    <a href="https://www.instagram.com/many_electricals/" target="_blank" class="d-flex align-items-center text-white"
+      style="background-color: rgba(225,48,108,0.85); width: 150px; height: 45px; padding-left: 12px; border-radius: 5px 0 0 5px; box-shadow: -2px 2px 5px rgba(0,0,0,0.2); text-decoration: none;">
+      <i class="fab fa-instagram" style="width: 25px; font-size: 18px;"></i>
+      <span style="font-size: 13px; font-weight: 700; margin-left: 10px;">Instagram</span>
+    </a>
+
+    <a href="https://www.tiktok.com/@many_electricals" target="_blank" class="d-flex align-items-center text-white"
+      style="background-color: rgba(0,0,0,0.75); width: 150px; height: 45px; padding-left: 12px; border-radius: 5px 0 0 5px; box-shadow: -2px 2px 5px rgba(0,0,0,0.2); text-decoration: none;">
+      <svg style="width: 20px; fill: white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path
+          d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17h0A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14z" />
+      </svg>
+      <span style="font-size: 13px; font-weight: 700; margin-left: 15px;">TikTok</span>
+    </a>
+
+    <a href="https://www.youtube.com/@many_electricals" target="_blank" class="d-flex align-items-center text-white"
+      style="background-color: rgba(255,0,0,0.85); width: 150px; height: 45px; padding-left: 12px; border-radius: 5px 0 0 5px; box-shadow: -2px 2px 5px rgba(0,0,0,0.2); text-decoration: none;">
+      <i class="fab fa-youtube" style="width: 25px; font-size: 18px;"></i>
+      <span style="font-size: 13px; font-weight: 700; margin-left: 10px;">YouTube</span>
+    </a>
+
+    <a href="https://www.linkedin.com/company/manyelectricals" target="_blank"
+      class="d-flex align-items-center text-white"
+      style="background-color: rgba(0,119,181,0.85); width: 150px; height: 45px; padding-left: 12px; border-radius: 5px 0 0 5px; box-shadow: -2px 2px 5px rgba(0,0,0,0.2); text-decoration: none;">
+      <i class="fab fa-linkedin-in" style="width: 25px; font-size: 18px;"></i>
+      <span style="font-size: 13px; font-weight: 700; margin-left: 10px;">LinkedIn</span>
+    </a>
+
+    <a href="https://www.threads.com/@many_electricals" target="_blank" class="d-flex align-items-center text-white"
+      style="background-color: rgba(0,0,0,0.75); width: 150px; height: 45px; padding-left: 12px; border-radius: 5px 0 0 5px; box-shadow: -2px 2px 5px rgba(0,0,0,0.2); text-decoration: none;">
+      <i class="fas fa-at" style="width: 25px; font-size: 18px;"></i>
+      <span style="font-size: 13px; font-weight: 700; margin-left: 10px;">Threads</span>
+    </a>
+  </ng-container>
+</div> -->
+
+
+<router-outlet></router-outlet>
+<app-footer></app-footer>
