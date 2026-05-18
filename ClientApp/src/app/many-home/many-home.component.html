@@ -5,11 +5,11 @@
   <div
     style="width: 100%; position: relative; height: auto;min-height: 200px;aspect-ratio: 1920 / 600;max-height: 800px;">
 
-    <div *ngFor="let slide of heroSlides; let i = index" [style.display]="i === currentHeroIndex ? 'block' : 'none'"
-      style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+    <div *ngFor="let slide of heroSlides; let i = index" [ngStyle]="getHeroSlideStyle(i)"
+      style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);">
 
       <img [src]="slide.img" alt="Hero Banner"
-        style="width: 100%; height: 100%; object-fit: fill; object-position: center;">
+        style="width: 100%; height: 100%; object-fit: fill; object-position: center; pointer-events: none;">
 
     </div>
 
