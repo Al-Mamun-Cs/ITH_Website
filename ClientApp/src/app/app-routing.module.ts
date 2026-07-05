@@ -29,12 +29,12 @@ import { TermsConditionsComponent } from "./pages/terms&conditions/terms&conditi
 
 const routes: Routes = [
   
-  // 1. Default route redirects to tmc
-  { path: '', redirectTo: 'tmc', pathMatch: 'full' },
+  // 1. Default route redirects to ith
+  { path: '', redirectTo: 'ith', pathMatch: 'full' },
   
   // 2. The Lazy Loaded Module
   {
-    path: 'tmc',
+    path: 'ith',
     loadChildren: () => import('./many-home/many-home.module').then(m => m.ManyHomeModule)
   },
   

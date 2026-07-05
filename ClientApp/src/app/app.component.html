@@ -35,24 +35,21 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light ssg-navbar">
     <div class="container-fluid d-flex align-items-center" style="max-width:1190px; margin:auto; padding:0 40px;">
-
       <a class="navbar-brand" style="width: auto; margin:0; padding:0; display:flex; align-items:center;">
         <img src="assets/images/ITH_Logo.png" alt="SSG Logo" style="height:30px; width:auto;">
       </a>
-
       <button class="navbar-toggler" type="button" (click)="isMobileMenuOpen = !isMobileMenuOpen"
         style="border:none; background-color:transparent;">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" *ngIf="!isMobile" style="flex:1; display:flex; justify-content:flex-end;">
         <ul class="navbar-nav align-items-center"
-          style="display:flex; flex-direction:row; justify-content:flex-end; gap:15px; width:100%;">
+          style="display:flex; flex-direction:row; justify-content:flex-end; gap:30px; width:100%;">
 
           <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
-              routerLink="/">Home</a></li>
+              routerLink="/">Home</a>
+          </li>
 
-         
           <li class="nav-item" ngbDropdown display="static"> <a class="nav-link d-flex align-items-center"
               style="transform: scale(1.2); transform-origin: left center;" tabindex="0" ngbDropdownToggle
               id="aboutDropdown">
@@ -68,7 +65,7 @@
           <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
               routerLink="/brand">Our Product</a></li>
 
-          <li class="nav-item" ngbDropdown display="dynamic">
+          <!-- <li class="nav-item" ngbDropdown display="dynamic">
             <a class="nav-link d-flex align-items-center" style="transform: scale(1.2); transform-origin: left center;"
               tabindex="0" ngbDropdownToggle id="businessDropdown">
               Business Units
@@ -80,7 +77,7 @@
                 {{ unit.businessUnitName }}
               </a>
             </div>
-          </li>
+          </li> -->
 
           <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
               routerLink="/client">Clients</a></li>
@@ -91,7 +88,8 @@
             <ul ngbDropdownMenu class="dropdown-menu shadow">
 
               <li>
-                <button ngbDropdownItem type="button" (click)="navigateTo('/media/awards'); mediaDropdown.close()" style="cursor: pointer;">
+                <button ngbDropdownItem type="button" (click)="navigateTo('/media/awards'); mediaDropdown.close()"
+                  style="cursor: pointer;">
                   Awards & Achievements
                 </button>
               </li>
@@ -192,7 +190,7 @@
       </li>
 
       <!-- BUSINESS UNITS (MOBILE) -->
-      <li style="padding:10px 0; cursor:pointer" (click)="mobileBusinessOpen = !mobileBusinessOpen">
+      <!-- <li style="padding:10px 0; cursor:pointer" (click)="mobileBusinessOpen = !mobileBusinessOpen">
         <strong>Business Units</strong>
         <span>{{ mobileBusinessOpen ? '▲' : '▼' }}</span>
       </li>
@@ -208,7 +206,7 @@
           {{ unit.businessUnitName }}
         </li>
 
-      </ul>
+      </ul> -->
 
 
       <!-- CLIENT -->
