@@ -44,10 +44,14 @@
       </button>
       <div class="collapse navbar-collapse" *ngIf="!isMobile" style="flex:1; display:flex; justify-content:flex-end;">
         <ul class="navbar-nav align-items-center"
-          style="display:flex; flex-direction:row; justify-content:flex-end; gap:30px; width:100%;">
+          style="display:flex; flex-direction:row; justify-content:flex-end; gap:15px; width:100%;">
 
           <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
               routerLink="/">Home</a>
+          </li>
+
+          <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
+              routerLink="/about/overview">Company Overview</a>
           </li>
 
           <li class="nav-item" ngbDropdown display="static"> <a class="nav-link d-flex align-items-center"
@@ -56,14 +60,15 @@
               About Us
             </a>
             <div ngbDropdownMenu aria-labelledby="aboutDropdown" class="dropdown-menu shadow custom-dropdown-animation">
-              <a ngbDropdownItem routerLink="/about/overview" style="font-size:32px;">Company Overview</a>
+              <!-- <a ngbDropdownItem routerLink="/about/overview" style="font-size:32px;">Company Overview</a> -->
               <a ngbDropdownItem routerLink="/about/management" style="font-size:32px;">Our Management</a>
               <a ngbDropdownItem routerLink="/about/employee">Our Employees</a>
             </div>
           </li>
 
           <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
-              routerLink="/brand">Our Product</a></li>
+              routerLink="/brand">Our Product</a>
+          </li>
 
           <!-- <li class="nav-item" ngbDropdown display="dynamic">
             <a class="nav-link d-flex align-items-center" style="transform: scale(1.2); transform-origin: left center;"
@@ -166,6 +171,10 @@
         <a routerLink="/" (click)="isMobileMenuOpen=false">Home</a>
       </li>
 
+      <li style="padding:10px 0">
+        <a routerLink="/about/overview" (click)="isMobileMenuOpen=false">Company Overview</a>
+      </li>
+
       <!-- ABOUT US -->
       <li style="padding:10px 0;cursor:pointer" (click)="mobileAboutOpen=!mobileAboutOpen">
         <strong>About Us</strong>
@@ -173,9 +182,9 @@
       </li>
 
       <ul *ngIf="mobileAboutOpen" style="list-style:none;padding-left:15px">
-        <li style="padding:6px 0">
+        <!-- <li style="padding:6px 0">
           <a routerLink="/about/overview" (click)="isMobileMenuOpen=false">Company Overview</a>
-        </li>
+        </li> -->
         <li style="padding:6px 0">
           <a routerLink="/about/management" (click)="isMobileMenuOpen=false">Our Management</a>
         </li>
