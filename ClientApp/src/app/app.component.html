@@ -44,30 +44,30 @@
       </button>
       <div class="collapse navbar-collapse" *ngIf="!isMobile" style="flex:1; display:flex; justify-content:flex-end;">
         <ul class="navbar-nav align-items-center"
-          style="display:flex; flex-direction:row; justify-content:flex-end; gap:15px; width:100%;">
+          style="display:flex; flex-direction:row; justify-content:flex-end; gap:50px; width:100%;font-size:20px;">
 
-          <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
-              routerLink="/">Home</a>
+          <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;">
+            <a class="nav-link"
+              routerLink="/" style="font-size:16px !important;">Home</a>
           </li>
 
           <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
-              routerLink="/about/overview">Company Overview</a>
+              routerLink="/about/overview" style="font-size:16px !important;"> About Us</a>
           </li>
 
-          <li class="nav-item" ngbDropdown display="static"> <a class="nav-link d-flex align-items-center"
+          <!-- <li class="nav-item" ngbDropdown display="static"> <a class="nav-link d-flex align-items-center"
               style="transform: scale(1.2); transform-origin: left center;" tabindex="0" ngbDropdownToggle
               id="aboutDropdown">
-              About Us
+              Company Overview
             </a>
             <div ngbDropdownMenu aria-labelledby="aboutDropdown" class="dropdown-menu shadow custom-dropdown-animation">
-              <!-- <a ngbDropdownItem routerLink="/about/overview" style="font-size:32px;">Company Overview</a> -->
               <a ngbDropdownItem routerLink="/about/management" style="font-size:32px;">Our Management</a>
               <a ngbDropdownItem routerLink="/about/employee">Our Employees</a>
             </div>
-          </li>
+          </li> -->
 
           <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
-              routerLink="/brand">Our Product</a>
+              routerLink="/brand" style="font-size:16px !important;">Our Product</a>
           </li>
 
           <!-- <li class="nav-item" ngbDropdown display="dynamic">
@@ -85,9 +85,9 @@
           </li> -->
 
           <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
-              routerLink="/client">Clients</a></li>
+              routerLink="/client" style="font-size:16px !important;">Clients</a></li>
 
-          <li class="nav-item dropdown" ngbDropdown #mediaDropdown="ngbDropdown">
+          <!-- <li class="nav-item dropdown" ngbDropdown #mediaDropdown="ngbDropdown">
             <a class="nav-link d-flex align-items-center" style="transform: scale(1.2); transform-origin: left center;"
               ngbDropdownToggle>Media Corner</a>
             <ul ngbDropdownMenu class="dropdown-menu shadow">
@@ -99,7 +99,6 @@
                 </button>
               </li>
 
-              <!-- Media Center submenu -->
               <li ngbDropdown class="dropdown-submenu" #mediaCenterDropdown="ngbDropdown"
                 (mouseenter)="mediaCenterDropdown.open()" (mouseleave)="mediaCenterDropdown.close()"
                 placement="right-top"> <button ngbDropdownItem type="button" ngbDropdownToggle
@@ -124,7 +123,6 @@
               </li>
 
 
-              <!-- News -->
               <li>
                 <button ngbDropdownItem type="button" (click)="navigateTo('/media/news'); mediaDropdown.close()">
                   Events
@@ -132,7 +130,7 @@
               </li>
 
             </ul>
-          </li>
+          </li> -->
 
 
 
@@ -141,9 +139,9 @@
           <!-- <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
               href="http://217.217.254.11:8092/#/many-home" target="_blank">eShop</a></li> -->
           <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"> <a class="nav-link"
-              routerLink="/career" routerLinkActive="active">Career</a></li>
+              routerLink="/career" routerLinkActive="active" style="font-size:16px !important;">Career</a></li>
           <li class="nav-item" style="transform: scale(1.2); transform-origin: left center;"><a class="nav-link"
-              routerLink="/contact">Contact Us</a></li>
+              routerLink="/contact" style="font-size:16px !important;">Contact Us</a></li>
         </ul>
       </div>
 
@@ -172,26 +170,23 @@
       </li>
 
       <li style="padding:10px 0">
-        <a routerLink="/about/overview" (click)="isMobileMenuOpen=false">Company Overview</a>
+        <a routerLink="/about/overview" (click)="isMobileMenuOpen=false">About Us</a>
       </li>
 
       <!-- ABOUT US -->
-      <li style="padding:10px 0;cursor:pointer" (click)="mobileAboutOpen=!mobileAboutOpen">
-        <strong>About Us</strong>
+      <!-- <li style="padding:10px 0;cursor:pointer" (click)="mobileAboutOpen=!mobileAboutOpen">
+        <strong>Company Overview</strong>
         <span>{{ mobileAboutOpen ? '▲' : '▼' }}</span>
-      </li>
+      </li> -->
 
-      <ul *ngIf="mobileAboutOpen" style="list-style:none;padding-left:15px">
-        <!-- <li style="padding:6px 0">
-          <a routerLink="/about/overview" (click)="isMobileMenuOpen=false">Company Overview</a>
-        </li> -->
+      <!-- <ul *ngIf="mobileAboutOpen" style="list-style:none;padding-left:15px">
         <li style="padding:6px 0">
           <a routerLink="/about/management" (click)="isMobileMenuOpen=false">Our Management</a>
         </li>
         <li style="padding:6px 0">
           <a routerLink="/about/employee" (click)="isMobileMenuOpen=false">Our Employees</a>
         </li>
-      </ul>
+      </ul> -->
 
       <!-- BRAND -->
       <li style="padding:10px 0">
@@ -224,7 +219,7 @@
       </li>
 
       <!-- MEDIA CORNER -->
-      <li style="padding:10px 0;cursor:pointer" (click)="mobileMediaOpen=!mobileMediaOpen">
+      <!-- <li style="padding:10px 0;cursor:pointer" (click)="mobileMediaOpen=!mobileMediaOpen">
         <strong>Media Corner</strong>
         <span>{{ mobileMediaOpen ? '▲' : '▼' }}</span>
       </li>
@@ -235,7 +230,6 @@
           Awards & Achievements
         </li>
 
-        <!-- MEDIA CENTER -->
         <li style="padding:6px 0;cursor:pointer" (click)="mobileMediaCenterOpen=!mobileMediaCenterOpen">
           Media Center
           <span>{{ mobileMediaCenterOpen ? '▲' : '▼' }}</span>
@@ -254,12 +248,12 @@
           Events
         </li>
 
-      </ul>
+      </ul> -->
 
       <!-- ESHOP -->
-      <li style="padding:10px 0">
+      <!-- <li style="padding:10px 0">
         <a href="http://217.217.254.11:8092/#/many-home" target="_blank" (click)="isMobileMenuOpen=false">eShop</a>
-      </li>
+      </li> -->
       <!-- <li class="nav-item"> <a class="nav-link" routerLink="/career" routerLinkActive="active">Career</a></li> -->
       <li style="padding:10px 0">
         <a routerLink="/career" (click)="isMobileMenuOpen=false">Career</a>
